@@ -1,24 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>10</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>90</x>
-      <y>270</y>
-      <w>180</w>
-      <h>210</h>
+      <x>240</x>
+      <y>256</y>
+      <w>144</w>
+      <h>168</h>
     </coordinates>
-    <panel_attributes>PDF I/O</panel_attributes>
+    <panel_attributes>PDF I/O
+--
+
+--
++readPDF(): void
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>750</x>
-      <y>480</y>
-      <w>350</w>
-      <h>280</h>
+      <x>472</x>
+      <y>32</y>
+      <w>280</w>
+      <h>224</h>
     </coordinates>
     <panel_attributes>Event
 --
@@ -43,10 +48,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>750</x>
-      <y>0</y>
-      <w>350</w>
-      <h>460</h>
+      <x>840</x>
+      <y>32</y>
+      <w>280</w>
+      <h>368</h>
     </coordinates>
     <panel_attributes>Course extends Event
 --
@@ -83,21 +88,25 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>90</x>
-      <y>510</y>
-      <w>180</w>
-      <h>210</h>
+      <x>72</x>
+      <y>544</y>
+      <w>144</w>
+      <h>168</h>
     </coordinates>
-    <panel_attributes>JavaFX</panel_attributes>
+    <panel_attributes>JavaFX
+--
+
+--
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>90</x>
-      <y>20</y>
-      <w>280</w>
-      <h>210</h>
+      <x>152</x>
+      <y>40</y>
+      <w>224</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>Program
 --
@@ -108,6 +117,89 @@
 + addNewEvent(newEvent: Event): void
 + removeEvent(eventName: String): void
 + formatScheduleForGui(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>744</x>
+      <y>144</y>
+      <w>112</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>368</x>
+      <y>152</y>
+      <w>120</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>160</x>
+      <y>200</y>
+      <w>24</w>
+      <h>360</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;430.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>288</x>
+      <y>200</y>
+      <w>24</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>432</x>
+      <y>0</y>
+      <w>704</w>
+      <h>432</h>
+    </coordinates>
+    <panel_attributes>Model
+--
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>96</x>
+      <y>8</y>
+      <w>304</w>
+      <h>432</h>
+    </coordinates>
+    <panel_attributes>Controller
+--
+bg=red</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>40</x>
+      <y>512</y>
+      <w>224</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>View
+--
+bg=blue</panel_attributes>
     <additional_attributes/>
   </element>
 </diagram>
