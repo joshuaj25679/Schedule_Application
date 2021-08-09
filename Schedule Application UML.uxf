@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>90</x>
+      <y>270</y>
+      <w>180</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>PDF I/O</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>480</y>
+      <w>350</w>
+      <h>280</h>
+    </coordinates>
+    <panel_attributes>Event
+--
+-time: LocalTime
+-days: String
+-eventName: String
+
+--
++course(time: LocalTime, days: String, eventName: String): ctor
+
++getTime(): LocalTime
++setTime(newTime: LocalTime): void
+
++getDays(): String
++setDays(newDays): String): void
+
++getEventName(): String
++setEventName(newEventName: String): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>0</y>
+      <w>350</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>Course extends Event
+--
+-time: LocalTime
+-sectionCode: String
+-courseCode: String
+-daysTaught: String
+-courseName: String
+-isRequired: boolean
+
+--
++course(time: LocalTime, sectionCode: String, courseCode: String, daysTaught: String, courseName: String, isRequired: boolean): ctor
+
++getTime(): LocalTime
++setTime(newTime: LocalTime): void
+
++getSectionCode(): String
++setSectionCode(newSectionCode: String): void
+
++getCourseCode(): String
++setCourseCode(newCourseCode: String): void
+
++getDaysTaught(): String
++setDaysTaught(newDaysTaught: String): void
+
++getCourseName(): String
++setCourseName(newCourseName: String): void
+
++getIsRequired(): boolean
++setIsRequired(newIsRequired: boolean): void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>90</x>
+      <y>510</y>
+      <w>180</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>JavaFX</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>90</x>
+      <y>20</y>
+      <w>280</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>Program
+--
+
+
+--
++ run(): void
++ addNewEvent(newEvent: Event): void
++ removeEvent(eventName: String): void
++ formatScheduleForGui(): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
