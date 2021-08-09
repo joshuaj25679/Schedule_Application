@@ -10,7 +10,7 @@ import org.apache.pdfbox.text.PDFTextStripper;
 public class PDFtoTXT {
     public static void test(){
         try {
-            File file = new File("test.pdf");
+            File file = new File("src/main/files/test.pdf");
             PDDocument document = Loader.loadPDF(file);
             //Instantiate PDFTextStripper class
             PDFTextStripper pdfStripper = new PDFTextStripper();
