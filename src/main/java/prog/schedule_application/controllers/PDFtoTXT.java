@@ -12,18 +12,18 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
 
 public class PDFtoTXT {
-    static String[] string;
-    static List<String> pdfStrings = new ArrayList<String>();
-    public static void test(){
+
+    public static List<String> pdfStrings = new ArrayList<String>();
+    public static void test(String pathname){
         try {
             //TODO Make Pathname dynamic
-            File file = new File("src/main/files/test.pdf");
+            File file = new File(pathname);
             PDDocument document = Loader.loadPDF(file);
             //Instantiate PDFTextStripper class
             PDFTextStripper pdfStripper = new PDFTextStripper();
             //Retrieving text from PDF document
             String text = pdfStripper.getText(document);
-            string = text.split("\n");
+            String[] string = text.split("\n");
             pdfStrings = Arrays.asList(string);
             //System.out.println(text);
             //Closing the document

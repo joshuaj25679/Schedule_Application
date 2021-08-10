@@ -16,7 +16,7 @@ public class Program {
         //Use values in Parameter to build Courses
         //Add Courses to ArrayList<Course>
         //Return ArrayList<Course>
-        PDFtoTXT.test();
+        PDFtoTXT.test("src/main/files/test.pdf");
 
     }
 

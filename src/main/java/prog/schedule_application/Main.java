@@ -21,6 +21,6 @@ public class Main extends Application {
     public static void main(String[] args) {
         PDFtoTXT a = new PDFtoTXT();
         //launch();
-        a.test();
+        a.test("src/main/files/test.pdf");
     }
 }
