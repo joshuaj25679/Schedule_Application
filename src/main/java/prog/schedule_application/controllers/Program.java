@@ -21,6 +21,7 @@ public class Program {
         //Use values in Parameter to build Courses
         //Add Courses to ArrayList<Course>
         //Return ArrayList<Course>
+        String regex = "^([A-Z]{3}[0-9]{3})[ ]([A-Z0-9]{1})[ ]([A-z\\s\\:\\-]{1,})[ ]([0-9]{1})[ ]([0-9\\:]{4})[ ](AM|PM)[-]([0-9\\:]{4})[ ](AM|PM)[ ]([MTWHF]{1,5})[ ]([0-9]{3})";
         PDFtoTXT.test("src/main/files/test.pdf");
         for(String a : PDFtoTXT.pdfStrings){
 
