@@ -10,6 +10,7 @@ import org.apache.pdfbox.text.PDFTextStripper;
 public class PDFtoTXT {
     public static void test(){
         try {
+            //TODO Make Pathname dynamic
             File file = new File("src/main/files/test.pdf");
             PDDocument document = Loader.loadPDF(file);
             //Instantiate PDFTextStripper class
@@ -25,10 +26,6 @@ public class PDFtoTXT {
 
     }
 
-    public static void stringSplitter(){
-        //Use regex on pdf information string to separate values for Event/Course constructor
-        //Return ArrayList<String> of the separated values
-    }
 
 
 }

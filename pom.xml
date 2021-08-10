@@ -75,7 +75,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>prog.schedule_application/prog.schedule_application.HelloApplication</mainClass>
+                            <mainClass>prog.schedule_application/prog.schedule_application.Main</mainClass>
                         </configuration>
                     </execution>
                 </executions>
