@@ -1,9 +1,9 @@
-package prog.schedule_application;
+package prog.schedule_application.view;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 
-public class HelloController {
+public class JavaFXController {
     @FXML
     private Label welcomeText;
 

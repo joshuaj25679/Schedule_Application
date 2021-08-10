@@ -9,4 +9,8 @@ module prog.schedule_application {
 
     opens prog.schedule_application to javafx.fxml;
     exports prog.schedule_application;
+    exports prog.schedule_application.controllers;
+    opens prog.schedule_application.controllers to javafx.fxml;
+    exports prog.schedule_application.view;
+    opens prog.schedule_application.view to javafx.fxml;
 }
