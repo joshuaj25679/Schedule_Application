@@ -1,6 +1,7 @@
 package prog.schedule_application.controllers;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Program {
     private static String pathName = "src/main/files/test.pdf";
@@ -21,7 +22,9 @@ public class Program {
         //Add Courses to ArrayList<Course>
         //Return ArrayList<Course>
         PDFtoTXT.test("src/main/files/test.pdf");
+        for(String a : PDFtoTXT.pdfStrings){
 
+        }
     }
 
 

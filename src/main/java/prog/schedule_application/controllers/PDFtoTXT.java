@@ -13,7 +13,7 @@ import org.apache.pdfbox.text.PDFTextStripper;
 
 public class PDFtoTXT {
 
-    public static List<String> pdfStrings = new ArrayList<String>();
+    public static String[] pdfStrings;
     public static void test(String pathname){
         try {
             File file = new File(pathname);
@@ -22,8 +22,7 @@ public class PDFtoTXT {
             PDFTextStripper pdfStripper = new PDFTextStripper();
             //Retrieving text from PDF document
             String text = pdfStripper.getText(document);
-            String[] string = text.split("\n");
-            pdfStrings = Arrays.asList(string);
+            pdfStrings = text.split("\n");
             //System.out.println(text);
             //Closing the document
             document.close();
