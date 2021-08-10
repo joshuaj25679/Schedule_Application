@@ -1,6 +1,7 @@
 package prog.schedule_application.models;
 
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class Course extends Event{
 
@@ -37,5 +38,18 @@ public class Course extends Event{
 
     public void setRequired(boolean required) {
         isRequired = required;
+    }
+
+    @Override
+    public String toString(){
+        DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh:mm a");
+        StringBuilder sb = new StringBuilder();
+        sb.append("\n***COURSE***\n");
+        sb.append("Code: " + getCourseCode() + "\n");
+        sb.append("Section: " + getSectionCode() + "\n");
+        sb.append("Name: " + getEventName() + "\n");
+        sb.append("Time: " + getTime().format(dtf) + "\n");
+        sb.append("DaysOfTheWeek: " + getDays());
+        return sb.toString();
     }
 }

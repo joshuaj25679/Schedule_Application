@@ -3,9 +3,15 @@ package prog.schedule_application;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.util.converter.LocalTimeStringConverter;
+import prog.schedule_application.models.Course;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class HelloApplication extends Application {
     @Override
