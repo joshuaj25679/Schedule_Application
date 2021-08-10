@@ -8,9 +8,9 @@ public class Event {
     private String days;
 
     public Event(LocalTime time, String eventName, String days) {
-        this.time = time;
-        this.eventName = eventName;
-        this.days = days;
+        setTime(time);
+        setEventName(eventName);
+        setDays(days);
     }
 
     public LocalTime getTime() {

@@ -11,9 +11,9 @@ public class Course extends Event{
 
     public Course(LocalTime time, String eventName, String days, String sectionCode, String courseCode, boolean isRequired) {
         super(time, eventName, days);
-        this.sectionCode = sectionCode;
-        this.courseCode = courseCode;
-        this.isRequired = isRequired;
+        setSectionCode(sectionCode);
+        setCourseCode(courseCode);
+        setRequired(isRequired);
     }
 
     public String getSectionCode() {
