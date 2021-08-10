@@ -16,7 +16,6 @@ public class PDFtoTXT {
     public static List<String> pdfStrings = new ArrayList<String>();
     public static void test(String pathname){
         try {
-            //TODO Make Pathname dynamic
             File file = new File(pathname);
             PDDocument document = Loader.loadPDF(file);
             //Instantiate PDFTextStripper class
