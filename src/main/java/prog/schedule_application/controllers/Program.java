@@ -38,10 +38,10 @@ public class Program {
                 LocalTime endTime = LocalTime.of(Integer.parseInt(m.group(8)), Integer.parseInt(m.group(9)));
 //                LocalTime endTime = LocalTime.of(9,30);
                 String eventName = m.group(3);
-                String days = m.group(9);
+                String days = m.group(11);
                 String sectionCode = m.group(2);
                 String courseCode = m.group(1);
-                String roomNumber = m.group(10);
+                String roomNumber = m.group(12);
                 Boolean isRequired = true;
                 counter += 1;
                 Course course = new Course(startTime, endTime, eventName, days, sectionCode, courseCode, roomNumber, isRequired);
