@@ -2,6 +2,9 @@ package prog.schedule_application.controllers;
 
 import prog.schedule_application.models.Course;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -19,8 +22,20 @@ public class Program {
 
     }
 
+<<<<<<< Updated upstream
     public static ArrayList<Course> buildCourses(){
         ArrayList<Course> courseList = new ArrayList<>();
+=======
+    public static void promptForClass(){
+        String[] classes = new String[6];
+        for(int i = 0; i < 7; i++){
+            classes[i] = promptForString("What is the Course Code (CSC180): ",false);
+        }
+    }
+
+
+    public static void buildCourses(){
+>>>>>>> Stashed changes
         int counter = 0;
         String regex = "^([A-Z]{3}[0-9]{3})[ ]([A-Z0-9]{1,2})[ ]([A-z\\s\\:\\-]{1,})[ ]([0-9]{1})[ ]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[-]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[ ]([MTWHF]{1,5})[ ]([0-9]{3})";
         PDFtoTXT.test("src/main/files/test.pdf");
@@ -51,5 +66,30 @@ public class Program {
         return courseList;
     }
 
+    public static String promptForString(String prompt, boolean allowBlank) {
+        if (prompt == null || prompt.isBlank()) {
+            throw new IllegalArgumentException("The prompt cannot be null, empty, or just white space. prompt=" + prompt);
+        }
 
+        String input = null;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        boolean inputIsInvalid = true;
+
+        do {
+            System.out.println(prompt);
+            try {
+                input = br.readLine();
+                inputIsInvalid = input == null || (!allowBlank && input.isBlank());
+
+                if (inputIsInvalid) {
+                    System.out.println("Your input was invalid. Please, try again.");
+                }
+            } catch (IOException ioe) {
+                System.out.println("There was a problem and your input was not received. Please, try again.");
+            }
+
+        } while (inputIsInvalid);
+
+        return input;
+    }
 }
