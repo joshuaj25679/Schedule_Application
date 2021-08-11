@@ -3,6 +3,7 @@ package prog.schedule_application.controllers;
 import prog.schedule_application.models.Course;
 
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -24,14 +25,18 @@ public class Program {
         //Add Courses to ArrayList<Course>
         //Return ArrayList<Course>
         int counter = 0;
-        String regex = "^([A-Z]{3}[0-9]{3})[ ]([A-Z0-9]{1})[ ]([A-z\\s\\:\\-]{1,})[ ]([0-9]{1})[ ]([0-9\\:]{4})[ ](AM|PM)[-]([0-9\\:]{4})[ ](AM|PM)[ ]([MTWHF]{1,5})[ ]([0-9]{3})";
+        String regex = "^([A-Z]{3}[0-9]{3})[ ]([A-Z0-9]{1,2})[ ]([A-z\\s\\:\\-]{1,})[ ]([0-9]{1})[ ]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[-]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[ ]([MTWHF]{1,5})[ ]([0-9]{3})";
         PDFtoTXT.test("src/main/files/test.pdf");
         for(String a : PDFtoTXT.pdfStrings){
             p = Pattern.compile(regex);
             m = p.matcher(a);
             if(m.find()){
-                LocalTime startTime = LocalTime.parse(m.group(5));
-                LocalTime endTime = LocalTime.parse(m.group(7));
+
+                DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh:mm");
+                LocalTime startTime = LocalTime.of(Integer.parseInt(m.group(5)), Integer.parseInt(m.group(6)));
+//                LocalTime startTime = LocalTime.of(8,0);
+                LocalTime endTime = LocalTime.of(Integer.parseInt(m.group(8)), Integer.parseInt(m.group(9)));
+//                LocalTime endTime = LocalTime.of(9,30);
                 String eventName = m.group(3);
                 String days = m.group(9);
                 String sectionCode = m.group(2);
