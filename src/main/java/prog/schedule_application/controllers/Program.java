@@ -20,10 +20,6 @@ public class Program {
     }
 
     public static void buildCourses(){
-        //Take in ArrayList<String> Parameter
-        //Use values in Parameter to build Courses
-        //Add Courses to ArrayList<Course>
-        //Return ArrayList<Course>
         int counter = 0;
         String regex = "^([A-Z]{3}[0-9]{3})[ ]([A-Z0-9]{1,2})[ ]([A-z\\s\\:\\-]{1,})[ ]([0-9]{1})[ ]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[-]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[ ]([MTWHF]{1,5})[ ]([0-9]{3})";
         PDFtoTXT.test("src/main/files/test.pdf");
@@ -34,8 +30,14 @@ public class Program {
 
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh:mm");
                 LocalTime startTime = LocalTime.of(Integer.parseInt(m.group(5)), Integer.parseInt(m.group(6)));
+                if (m.group(7).equals("PM")){
+                    startTime = LocalTime.of(Integer.parseInt(m.group(5)) + 12, Integer.parseInt(m.group(6)));
+                }
 //                LocalTime startTime = LocalTime.of(8,0);
                 LocalTime endTime = LocalTime.of(Integer.parseInt(m.group(8)), Integer.parseInt(m.group(9)));
+                if (m.group(10).equals("PM")) {
+                    endTime = LocalTime.of(Integer.parseInt(m.group(8)) + 12, Integer.parseInt(m.group(9)));
+                }
 //                LocalTime endTime = LocalTime.of(9,30);
                 String eventName = m.group(3);
                 String days = m.group(11);
