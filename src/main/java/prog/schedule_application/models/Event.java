@@ -35,7 +35,7 @@ public class Event {
     }
 
     public void setEventName(String eventName) {
-        this.eventName = dataChecker("([A-z\\s\\:\\-]{1,})[ ]([0-9]{1})[ ]([0-9\\:]{4})", eventName);
+        this.eventName = dataChecker("([A-z\\s\\:\\-]{1,})", eventName);
     }
 
     public String getDays() {
