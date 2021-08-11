@@ -53,7 +53,7 @@ public class Event {
             return toCheck;
         }
         else{
-            System.out.println("Invalid Data '" + toCheck + "'");
+            System.out.println("Data '" + toCheck + "' failed to match" + regex);
             return null;
         }
     }
