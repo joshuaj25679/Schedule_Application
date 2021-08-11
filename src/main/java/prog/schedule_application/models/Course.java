@@ -23,7 +23,7 @@ public class Course extends Event{
     }
 
     public void setSectionCode(String sectionCode) {
-        this.sectionCode = super.dataChecker("([A-Z0-9]{1})", sectionCode);
+        this.sectionCode = super.dataChecker("([A-Z0-9]{1,2})", sectionCode);
     }
 
     public String getRoomNumber(){
@@ -60,7 +60,7 @@ public class Course extends Event{
         sb.append("Section: " + getSectionCode() + "\n");
         sb.append("Name: " + getEventName() + "\n");
         sb.append("Time: " + getStartTime().format(dtf) + "\n");
-        sb.append("DaysOfTheWeek: " + getDays());
+        sb.append("DaysOfTheWeek: " + getDays()+ "\n");
         sb.append("ClassRoom: " + getRoomNumber());
         return sb.toString();
     }

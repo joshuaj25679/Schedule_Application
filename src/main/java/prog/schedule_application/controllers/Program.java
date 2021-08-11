@@ -40,8 +40,7 @@ public class Program {
                 Boolean isRequired = true;
                 counter += 1;
                 Course course = new Course(startTime, endTime, eventName, days, sectionCode, courseCode, roomNumber, isRequired);
-                System.out.println(course.toString());
-
+                System.out.println(course);
             }
         }
     }
