@@ -34,8 +34,14 @@ public class Program {
 
                 DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh:mm");
                 LocalTime startTime = LocalTime.of(Integer.parseInt(m.group(5)), Integer.parseInt(m.group(6)));
+                if (m.group(7).equals("PM")){
+                    startTime = LocalTime.of(Integer.parseInt(m.group(5)) + 12, Integer.parseInt(m.group(6)));
+                }
 //                LocalTime startTime = LocalTime.of(8,0);
                 LocalTime endTime = LocalTime.of(Integer.parseInt(m.group(8)), Integer.parseInt(m.group(9)));
+                if (m.group(10).equals("PM")) {
+                    endTime = LocalTime.of(Integer.parseInt(m.group(8)) + 12, Integer.parseInt(m.group(9)));
+                }
 //                LocalTime endTime = LocalTime.of(9,30);
                 String eventName = m.group(3);
                 String days = m.group(11);
