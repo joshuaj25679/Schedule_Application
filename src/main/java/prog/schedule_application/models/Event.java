@@ -3,23 +3,29 @@ package prog.schedule_application.models;
 import java.time.LocalTime;
 
 public class Event {
-    private LocalTime time;
+    private LocalTime startTime;
+    private LocalTime endTime;
     private String eventName;
     private String days;
 
-    public Event(LocalTime time, String eventName, String days) {
-        setTime(time);
+    public Event(LocalTime startTime, LocalTime endTime, String eventName, String days) {
+        setStartTime(startTime);
+        setEndTime(endTime);
         setEventName(eventName);
         setDays(days);
     }
 
-    public LocalTime getTime() {
-        return time;
+    public LocalTime getStartTime() {
+        return startTime;
     }
 
-    public void setTime(LocalTime time) {
-        this.time = time;
+    public void setStartTime(LocalTime startTime) {
+        this.startTime = startTime;
     }
+
+    public LocalTime getEndTime() { return endTime; }
+
+    public void setEndTime(LocalTime endTime) { this.endTime = endTime;}
 
     public String getEventName() {
         return eventName;

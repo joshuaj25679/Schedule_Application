@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import prog.schedule_application.controllers.Program;
 
 import java.io.IOException;
 
@@ -18,6 +19,6 @@ public class Main extends Application {
     }
 
     public static void main(String[] args) {
-
+        Program.buildCourses();
     }
 }
