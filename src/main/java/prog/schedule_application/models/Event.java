@@ -1,6 +1,9 @@
 package prog.schedule_application.models;
 
+import java.lang.reflect.Type;
 import java.time.LocalTime;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Event {
     private LocalTime startTime;
@@ -32,7 +35,7 @@ public class Event {
     }
 
     public void setEventName(String eventName) {
-        this.eventName = eventName;
+        this.eventName = dataChecker("([A-z\\s\\:\\-]{1,})[ ]([0-9]{1})", eventName);
     }
 
     public String getDays() {
@@ -40,6 +43,18 @@ public class Event {
     }
 
     public void setDays(String days) {
-        this.days = days;
+        this.days = dataChecker("([MTWHF]{1,5})", days);
+    }
+
+    protected String dataChecker(String regex, String toCheck){
+        Pattern p = Pattern.compile(regex);
+        Matcher m = p.matcher(toCheck);
+        if(m.find()){
+            return toCheck;
+        }
+        else{
+            System.out.println("Invalid Data '" + toCheck + "'");
+            return null;
+        }
     }
 }

@@ -23,7 +23,7 @@ public class Course extends Event{
     }
 
     public void setSectionCode(String sectionCode) {
-        this.sectionCode = sectionCode;
+        this.sectionCode = super.dataChecker("([A-Z0-9]{1})", sectionCode);
     }
 
     public String getRoomNumber(){
@@ -31,7 +31,7 @@ public class Course extends Event{
     }
 
     public void setRoomNumber(String roomNumber){
-        this.roomNumber = roomNumber;
+        this.roomNumber = super.dataChecker("([0-9]{3})", roomNumber);
     }
 
     public String getCourseCode() {
@@ -39,7 +39,8 @@ public class Course extends Event{
     }
 
     public void setCourseCode(String courseCode) {
-        this.courseCode = courseCode;
+        //Validate the courseCode is in the correct format before setting it
+        this.courseCode = super.dataChecker("([A-Z]{3}[0-9]{3})", courseCode);
     }
 
     public boolean isRequired() {
@@ -63,4 +64,7 @@ public class Course extends Event{
         sb.append("ClassRoom: " + getRoomNumber());
         return sb.toString();
     }
+
+
+
 }
