@@ -59,7 +59,7 @@ public class Course extends Event{
         sb.append("Code: " + getCourseCode() + "\n");
         sb.append("Section: " + getSectionCode() + "\n");
         sb.append("Name: " + getEventName() + "\n");
-        sb.append("Time: " + getStartTime().format(dtf) + "\n");
+        sb.append("Time: " + getStartTime().format(dtf) + "-" + getEndTime().format(dtf) + "\n");
         sb.append("DaysOfTheWeek: " + getDays()+ "\n");
         sb.append("ClassRoom: " + getRoomNumber());
         return sb.toString();
