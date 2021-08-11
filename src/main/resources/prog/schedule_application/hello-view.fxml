@@ -1,16 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 
-<?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="prog.schedule_application.view.JavaFXController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+
+<ScrollPane prefHeight="200.0" prefWidth="200.0">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" >
+      <GridPane gridLinesVisible="true"  prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+        <columnConstraints>
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="95.60003662109375" minWidth="10.0" percentWidth="10.0" prefWidth="30.400022506713867" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="169.59997749328613" minWidth="10.0" percentWidth="18.0" prefWidth="101.99996337890626" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="167.60003662109372" minWidth="10.0" percentWidth="18.0" prefWidth="167.60003662109372" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="18.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="18.0" prefWidth="100.0" />
+          <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" percentWidth="18.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="11.600007057189941" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" percentHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+        <children>
+          <Label fx:id="Monday" alignment="CENTER" text="MONDAY" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+          <Label fx:id="Tuesday" alignment="CENTER" text="TUESDAY" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+          <Label fx:id="Wednesday" alignment="CENTER" text="WEDNESDAY" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+          <Label fx:id="Thursday" alignment="CENTER" text="THURSDAY" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="0" />
+          <Label fx:id="Friday" alignment="CENTER" text="FRIDAY" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="0" />
+          <Label fx:id="dayOne" alignment="CENTER" text="1" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+          <Label fx:id="dayTwo" alignment="CENTER" text="2" textAlignment="CENTER" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+          <Label fx:id="dayThree" alignment="CENTER" text="3" textAlignment="CENTER" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+          <Label fx:id="dayFour" alignment="CENTER" text="4" textAlignment="CENTER" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+          <Label fx:id="dayFive" alignment="CENTER" text="5" textAlignment="CENTER" GridPane.columnIndex="5" GridPane.rowIndex="2" />
+          <Label fx:id="12AM" alignment="CENTER" text="12AM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+          <Label fx:id="1AM" alignment="CENTER" text="1AM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+          <Label fx:id="2AM" alignment="CENTER" text="2AM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+          <Label fx:id="3AM" alignment="CENTER" text="3AM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+          <Label fx:id="4AM" alignment="CENTER" text="4AM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+          <Label fx:id="5AM" alignment="CENTER" text="5AM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+          <Label fx:id="6AM" alignment="CENTER" text="6AM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+          <Label fx:id="7AM" alignment="CENTER" text="7AM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+          <Label fx:id="8AM" alignment="CENTER" text="8AM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+          <Label fx:id="9AM" alignment="CENTER" text="9AM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="12" />
+          <Label fx:id="10AM" alignment="CENTER" text="10AM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="13" />
+          <Label fx:id="11AM" alignment="CENTER" text="11AM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="14" />
+          <Label fx:id="12PM" alignment="CENTER" text="12PM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="15" />
+          <Label fx:id="1PM" alignment="CENTER" text="1PM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="16" />
+          <Label fx:id="2PM" alignment="CENTER" text="2PM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="17" />
+          <Label fx:id="3PM" alignment="CENTER" text="3PM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="18" />
+          <Label fx:id="4PM" alignment="CENTER" text="4PM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="19" />
+          <Label fx:id="5PM" alignment="CENTER" text="5PM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="20" />
+          <Label fx:id="6PM" alignment="CENTER" text="6PM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="21" />
+          <Label fx:id="7PM" alignment="CENTER" text="7PM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="22" />
+          <Label fx:id="8PM" alignment="CENTER" text="8PM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="23" />
+          <Label fx:id="9PM" alignment="CENTER" text="9PM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="24" />
+          <Label fx:id="10PM" alignment="CENTER" text="10PM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="25" />
+          <Label fx:id="11PM" alignment="CENTER" text="11PM" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="26" />
+        </children>
+      </GridPane>
+    </AnchorPane>
+  </content>
+</ScrollPane>
