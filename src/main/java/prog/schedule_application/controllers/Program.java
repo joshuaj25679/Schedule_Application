@@ -1,8 +1,6 @@
 package prog.schedule_application.controllers;
 
 import prog.schedule_application.models.Course;
-import prog.schedule_application.models.Event;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
