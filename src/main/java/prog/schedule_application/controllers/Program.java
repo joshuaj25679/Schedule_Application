@@ -18,9 +18,11 @@ public class Program {
 
     //TODO Make a method to output schedule nicely
 
-    public static ArrayList<Event> scheduleCreator(String[] userClasses, ArrayList<Course> courseList){
-        ArrayList<Event> schedule = new ArrayList<Event>();
+    public static ArrayList<Course> scheduleCreator(String[] userClasses, ArrayList<Course> courseList){
+        ArrayList<Course> schedule = new ArrayList<>();
         ArrayList<Course> stagingGround = new ArrayList<>();
+        Course placeHolder = new Course(LocalTime.of(00, 01), LocalTime.of(00, 02), "New Day", "MTWHF", "Z", "ZZZ111", "000", true);
+        schedule.add(placeHolder);
 
         for(String courseCode : userClasses){
             //Check the course list for all the courses to be taken and add them to staging ground
@@ -30,7 +32,21 @@ public class Program {
                 }
             }
         }
-        System.out.println(stagingGround);
+        //Compare times and build schedule
+        for(Course scheduledCourse : schedule){
+            for(Course courses : stagingGround){
+                //Comparisons
+                if(!scheduledCourse.getCourseCode().equals(courses.getCourseCode()) && courses.getStartTime().isAfter(scheduledCourse.getEndTime())){
+                    schedule.add(courses);
+                }
+                else{
+                    System.out.println("NOT ADDED DIMWIT");
+                }
+            }
+        }
+
+
+        System.out.println(schedule);
 
         return schedule;
     }
