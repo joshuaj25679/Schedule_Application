@@ -18,8 +18,11 @@ public class Main extends Application {
         stage.show();
     }
 
+
+    private static String pathName = "src/main/files/test.pdf";
+
     public static void main(String[] args) {
-        Program.buildCourses();
+        Program.buildCourses(pathName);
         Program.promptForClass();
         //launch();
     }
