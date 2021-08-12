@@ -20,15 +20,24 @@ public class Program {
 
     public static ArrayList<Event> scheduleCreator(String[] userClasses, ArrayList<Course> courseList){
         ArrayList<Event> schedule = new ArrayList<Event>();
+        ArrayList<Course> stagingGround = new ArrayList<>();
 
-
+        for(String courseCode : userClasses){
+            //Check the course list for all the courses to be taken and add them to staging ground
+            for(Course course : courseList){
+                if(course.getCourseCode().equals(courseCode) && !course.getSectionCode().contains("2")) {
+                    stagingGround.add(course);
+                }
+            }
+        }
+        System.out.println(stagingGround);
 
         return schedule;
     }
 
     public static String[] promptForClass() {
         String[] userClasses = new String[6];
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 5; i++) {
             userClasses[i] = promptForString("What is the Course Code (CSC180): ", false);
         }
         return userClasses;
@@ -38,7 +47,7 @@ public class Program {
         ArrayList<Course> courseList = new ArrayList<>();
         int counter = 0;
         String regex = "^([A-Z]{3}[0-9]{3})[ ]([A-Z0-9]{1,2})[ ]([A-z\\s\\:\\-]{1,})[ ]([0-9]{1})[ ]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[-]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[ ]([MTWHF]{1,5})[ ]([0-9]{3})";
-        PDFtoTXT.test("src/main/files/test.pdf");
+        PDFtoTXT.test(path);
         for (String a : PDFtoTXT.pdfStrings) {
             p = Pattern.compile(regex);
             m = p.matcher(a);
@@ -60,7 +69,6 @@ public class Program {
                 counter += 1;
                 Course course = new Course(startTime, endTime, eventName, days, sectionCode, courseCode, roomNumber, isRequired);
                 courseList.add(course);
-                System.out.println(course);
             }
         }
         return courseList;
