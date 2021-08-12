@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 public class Program {
     private static Pattern p = null;
     private static Matcher m = null;
-    private static String pathName = "src/main/files/test.pdf";
+
 
     //TODO Make a method to output schedule nicely
 
@@ -34,7 +34,7 @@ public class Program {
         return userClasses;
     }
 
-    public static ArrayList<Course> buildCourses() {
+    public static ArrayList<Course> buildCourses(String path) {
         ArrayList<Course> courseList = new ArrayList<>();
         int counter = 0;
         String regex = "^([A-Z]{3}[0-9]{3})[ ]([A-Z0-9]{1,2})[ ]([A-z\\s\\:\\-]{1,})[ ]([0-9]{1})[ ]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[-]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[ ]([MTWHF]{1,5})[ ]([0-9]{3})";
