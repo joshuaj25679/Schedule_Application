@@ -10,15 +10,10 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="795.0" text="untitled" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="795.0" text="untitled" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.schedule_application.view.JavaFXController">
    <content>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="542.0" prefWidth="757.0">
          <children>
-            <ToolBar layoutX="579.0" layoutY="14.0" prefHeight="40.0" prefWidth="200.0" style="-fx-border-color: black;">
-               <items>
-                  <Button mnemonicParsing="false" text="LOG OUT" />
-               </items>
-            </ToolBar>
             <ScrollPane layoutX="28.0" layoutY="71.0" prefHeight="459.0" prefWidth="737.0" style="-fx-border-color: black;">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
@@ -104,8 +99,7 @@
             </ScrollPane>
             <ToolBar layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="541.0" style="-fx-border-color: black;">
                <items>
-                  <Button mnemonicParsing="false" text="home" />
-                  <Button fx:id="upload" mnemonicParsing="false" text="Schedule upload" />
+                  <Button fx:id="home" mnemonicParsing="false" onAction="#handleBtnHome" text="Home" />
                </items>
             </ToolBar>
          </children>
