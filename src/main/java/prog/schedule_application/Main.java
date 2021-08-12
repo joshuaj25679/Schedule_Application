@@ -20,7 +20,8 @@ public class Main extends Application {
 
     public static void main(String[] args) {
         Program.buildCourses();
-        launch();
+        Program.promptForClass();
+        //launch();
     }
 
 }
