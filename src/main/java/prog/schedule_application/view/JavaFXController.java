@@ -3,24 +3,26 @@ package prog.schedule_application.view;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import prog.schedule_application.Main;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class JavaFXController {
+public class JavaFXController implements Initializable {
     @FXML
     Button upload;
     @FXML
     Button home;
 
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
-
-
-        Parent root = (Parent) FXMLLoader.load(this.getClass().getResource("UploadScreen.fxml"));
+        Parent root = FXMLLoader.load(Main.class.getResource("UploadScreen.fxml"));
         Stage window = (Stage) this.upload.getScene().getWindow();
         window.setScene(new Scene(root, 320, 240));
         window.show();
@@ -28,9 +30,7 @@ public class JavaFXController {
     }
 
     public void handleBtnHome(ActionEvent actionEvent) throws IOException {
-
-
-        Parent root = (Parent) FXMLLoader.load(this.getClass().getResource("homeScreen.fxml"));
+        Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
         Stage window = (Stage) this.home.getScene().getWindow();
         window.setScene(new Scene(root, 320, 240));
         window.show();
@@ -38,4 +38,8 @@ public class JavaFXController {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+    }
 }
