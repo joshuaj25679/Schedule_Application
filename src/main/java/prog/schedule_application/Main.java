@@ -21,11 +21,11 @@ public class Main extends Application {
         stage.show();
     }
 
-    private static String pathName = "src/main/files/test.pdf";
+
 
     public static void main(String[] args) {
-        String[] testUserCourse = new String[]{"CSC180", "ENG110", "MAT150", "DBT230", "PRO100"};
-        Program.scheduleCreator(testUserCourse, Program.buildCourses(pathName));
+        //String[] testUserCourse = new String[]{"CSC180", "ENG110", "MAT150", "DBT230", "PRO100"};
+        //Program.scheduleCreator(testUserCourse, Program.buildCourses(pathName));
         launch();
     }
 
