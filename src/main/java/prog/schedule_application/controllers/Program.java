@@ -21,8 +21,6 @@ public class Program {
     public static ArrayList<Course> scheduleCreator(String[] userClasses, ArrayList<Course> courseList){
         ArrayList<Course> schedule = new ArrayList<>();
         ArrayList<Course> stagingGround = new ArrayList<>();
-        Course placeHolder = new Course(LocalTime.of(00, 01), LocalTime.of(00, 02), "New Day", "MTWHF", "Z", "ZZZ111", "000", true);
-        schedule.add(placeHolder);
 
         for(String courseCode : userClasses){
             //Check the course list for all the courses to be taken and add them to staging ground
@@ -33,17 +31,20 @@ public class Program {
             }
         }
         //Compare times and build schedule
-        for(Course scheduledCourse : schedule){
+        schedule.add(stagingGround.get(0));
+        int counter = 1;
             for(Course courses : stagingGround){
                 //Comparisons
-                if(!scheduledCourse.getCourseCode().equals(courses.getCourseCode()) && courses.getStartTime().isAfter(scheduledCourse.getEndTime())){
+                if(!schedule.get(counter - 1).getCourseCode().equals(courses.getCourseCode())){
                     schedule.add(courses);
+                    System.out.println(courses.getCourseCode() + " Added");
+                    counter++;
                 }
                 else{
                     System.out.println("NOT ADDED DIMWIT");
                 }
+
             }
-        }
 
 
         System.out.println(schedule);
