@@ -19,11 +19,11 @@
             <ToolBar layoutX="178.0" layoutY="14.0" prefHeight="40.0" prefWidth="244.0">
                <items>
                   <ToggleButton fx:id="addClass" mnemonicParsing="false" text="ADD CLASS" />
-                  <Button mnemonicParsing="false" text="SUBMIT" />
+                  <Button fx:id="submit" mnemonicParsing="false" text="SUBMIT" />
                   <Button fx:id="home" mnemonicParsing="false" onAction="#handleBtnHome" prefHeight="25.0" prefWidth="85.0" text="HOME" />
                </items>
             </ToolBar>
-            <TextField alignment="CENTER" layoutX="226.0" layoutY="85.0" promptText="ENTER COURSE CODE" />
+            <TextField fx:id="txtfield" alignment="CENTER" layoutX="226.0" layoutY="85.0" promptText="ENTER COURSE CODE" />
          </children>
       </Pane>
    </children>
