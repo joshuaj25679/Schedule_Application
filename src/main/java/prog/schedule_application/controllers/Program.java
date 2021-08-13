@@ -6,6 +6,7 @@ import prog.schedule_application.models.Event;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -14,11 +15,11 @@ import java.util.regex.Pattern;
 public class Program {
     private static Pattern p = null;
     private static Matcher m = null;
-
-
+    private static ArrayList<String> userCourses = new ArrayList<>();
+    private static String pathName = "src/main/files/test.pdf";
     //TODO Make a method to output schedule nicely
 
-    public static ArrayList<Course> scheduleCreator(String[] userClasses, ArrayList<Course> courseList){
+    public static ArrayList<Course> scheduleCreator(ArrayList<String> userClasses, ArrayList<Course> courseList){
         ArrayList<Course> schedule = new ArrayList<>();
         ArrayList<Course> stagingGround = new ArrayList<>();
 
@@ -51,7 +52,7 @@ public class Program {
 
         System.out.println(schedule);
 
-        return schedule;
+        return stagingGround;
     }
 
     public static String[] promptForClass() {
@@ -118,5 +119,27 @@ public class Program {
         } while (inputIsInvalid);
 
         return input;
+    }
+
+    public static String getPathName() {
+        return pathName;
+    }
+
+    public static void setPathName(String pathName) {
+        Program.pathName = pathName;
+    }
+
+    public static ArrayList<String> getUserCourses() {
+        return userCourses;
+    }
+
+    public static void setUserCourses(ArrayList<String> userCourses) {
+        Program.userCourses = userCourses;
+    }
+
+    public static void addToUserCourses(String courseToAdd){
+        String formattedInput = courseToAdd.toUpperCase();
+        formattedInput = formattedInput.replaceAll(" ", "");
+        getUserCourses().add(formattedInput);
     }
 }

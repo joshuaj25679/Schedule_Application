@@ -8,10 +8,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.controlsfx.control.spreadsheet.Grid;
 import prog.schedule_application.Main;
+import prog.schedule_application.controllers.Program;
 
 import java.io.IOException;
 import java.net.URL;
@@ -24,6 +26,12 @@ public class JavaFXController implements Initializable {
     Button home;
     @FXML
     Button log;
+    @FXML
+    Button addClass;
+    @FXML
+    Button submit;
+    @FXML
+    GridPane grid;
 
 
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
@@ -46,6 +54,23 @@ public class JavaFXController implements Initializable {
         stage.close();
     }
 
+    public void handleAddClassButton(ActionEvent event){
+        //Retrieve text in the text box
+        //Call addToUserCourses
+        //Display String[] to Big Text box
+        TextArea classCodeInput = new TextArea();
+        String userInput = classCodeInput.getText();
+        Program.addToUserCourses(userInput);
+        classCodeInput.setText(Program.getUserCourses().toString());
+    }
+
+    public void handleSubmitButton(ActionEvent event){
+        //Get String[] array of user classes
+        //Run scheduleCreator() with the userClasses
+        //Print out to the Scroll Text Box the ArrayList<Course>
+        TextArea courseListOutput = new TextArea();
+        courseListOutput.setText(Program.scheduleCreator(Program.getUserCourses(), Program.buildCourses(Program.getPathName())).toString());
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
