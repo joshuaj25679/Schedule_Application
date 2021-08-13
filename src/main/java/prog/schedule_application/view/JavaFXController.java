@@ -24,8 +24,6 @@ public class JavaFXController implements Initializable {
     Button home;
     @FXML
     Button log;
-    @FXML
-    GridPane grid;
 
 
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
