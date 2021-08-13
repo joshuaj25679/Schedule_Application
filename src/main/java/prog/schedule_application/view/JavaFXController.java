@@ -21,7 +21,7 @@ public class JavaFXController implements Initializable {
     @FXML
     Button upload;
     @FXML
-    Button home;
+    Button submit;
     @FXML
     Button log;
     @FXML
@@ -29,7 +29,7 @@ public class JavaFXController implements Initializable {
 
 
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("UploadScreen.fxml"));
+        Parent root = FXMLLoader.load(Main.class.getResource("add-Class.fxml"));
         Stage window = (Stage) this.upload.getScene().getWindow();
         window.setScene(new Scene(root, 800, 600));
         window.show();
@@ -38,7 +38,7 @@ public class JavaFXController implements Initializable {
 
     public void handleBtnHome(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
-        Stage window = (Stage) this.home.getScene().getWindow();
+        Stage window = (Stage) this.submit.getScene().getWindow();
         window.setScene(new Scene(root, 800, 600));
         window.show();
     }

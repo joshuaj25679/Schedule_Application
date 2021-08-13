@@ -103,8 +103,8 @@
             </ScrollPane>
             <ToolBar layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="541.0" style="-fx-border-color: black;">
               <items>
-                <Button mnemonicParsing="false" text="home" />
-                  <Button fx:id="upload" mnemonicParsing="false" onAction="#handleBtnUpload" text="Schedule upload" />
+                <Button mnemonicParsing="false" text="HOME" />
+                  <Button fx:id="upload" mnemonicParsing="false" onAction="#handleBtnUpload" text="ADD CLASSES" />
               </items>
             </ToolBar>
          </children>
