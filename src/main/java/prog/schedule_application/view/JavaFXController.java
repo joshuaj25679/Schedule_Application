@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import org.controlsfx.control.spreadsheet.Grid;
 import prog.schedule_application.Main;
@@ -23,6 +24,8 @@ public class JavaFXController implements Initializable {
     Button home;
     @FXML
     Button log;
+    @FXML
+    GridPane grid;
 
 
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {

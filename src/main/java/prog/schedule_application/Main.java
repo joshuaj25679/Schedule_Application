@@ -14,8 +14,6 @@ import java.util.ArrayList;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        String[] testUserCourse = new String[]{"CSC180", "ENG110", "MAT150", "DBT230", "PRO100"};
-        ArrayList<Course> temp = Program.scheduleCreator(testUserCourse, Program.buildCourses(pathName));
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("homeScreen.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 800, 600);
         stage.setTitle("Something!");
@@ -26,8 +24,8 @@ public class Main extends Application {
     private static String pathName = "src/main/files/test.pdf";
 
     public static void main(String[] args) {
-//        String[] testUserCourse = new String[]{"CSC180", "ENG110", "MAT150", "DBT230", "PRO100"};
-//        Program.scheduleCreator(testUserCourse, Program.buildCourses(pathName));
+        String[] testUserCourse = new String[]{"CSC180", "ENG110", "MAT150", "DBT230", "PRO100"};
+        Program.scheduleCreator(testUserCourse, Program.buildCourses(pathName));
         launch();
     }
 

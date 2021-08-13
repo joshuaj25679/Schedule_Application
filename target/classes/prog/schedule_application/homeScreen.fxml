@@ -10,19 +10,19 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="824.0" text="untitled" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.schedule_application.view.JavaFXController">
+<TitledPane animated="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="594.0" prefWidth="824.0" text="Course's" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.schedule_application.view.JavaFXController">
   <content>
     <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="542.0" prefWidth="757.0">
          <children>
-            <ToolBar layoutX="579.0" layoutY="14.0" prefHeight="40.0" prefWidth="200.0" style="-fx-border-color: black;">
+            <ToolBar layoutX="697.0" layoutY="14.0" prefHeight="40.0" prefWidth="82.0" style="-fx-border-color: black;">
               <items>
                 <Button fx:id="log" mnemonicParsing="false" onAction="#handleCloseButtonAction" text="LOG OUT" />
               </items>
             </ToolBar>
-            <ScrollPane layoutX="28.0" layoutY="71.0" prefHeight="459.0" prefWidth="737.0" style="-fx-border-color: black;">
+            <ScrollPane layoutX="42.0" layoutY="77.0" prefHeight="459.0" prefWidth="737.0" style="-fx-border-color: black;">
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
-                      <GridPane fx:id="grid" gridLinesVisible="true" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+                      <GridPane fx:id="grid" gridLinesVisible="true" prefHeight="456.0" prefWidth="735.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
                           <columnConstraints>
                               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="95.60003662109375" minWidth="10.0" percentWidth="10.0" prefWidth="30.400022506713867" />
                               <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="169.59997749328613" minWidth="10.0" percentWidth="18.0" prefWidth="101.99996337890626" />
@@ -101,7 +101,7 @@
 
               </content>
             </ScrollPane>
-            <ToolBar layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="541.0" style="-fx-border-color: black;">
+            <ToolBar layoutX="42.0" layoutY="14.0" prefHeight="40.0" prefWidth="513.0" style="-fx-border-color: black;">
               <items>
                 <Button fx:id="home" mnemonicParsing="false" onAction="#handleBtnHome" text="Home" />
                   <Button fx:id="upload" mnemonicParsing="false" onAction="#handleBtnUpload" text="Schedule upload" />
