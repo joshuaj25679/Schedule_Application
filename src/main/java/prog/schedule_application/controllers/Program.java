@@ -18,8 +18,8 @@ public class Program {
 
     //TODO Make a method to output schedule nicely
 
-    public static ArrayList<Event> scheduleCreator(String[] userClasses, ArrayList<Course> courseList){
-        ArrayList<Event> schedule = new ArrayList<Event>();
+    public static ArrayList<Course> scheduleCreator(String[] userClasses, ArrayList<Course> courseList){
+        ArrayList<Course> schedule = new ArrayList<>();
         ArrayList<Course> stagingGround = new ArrayList<>();
 
         for(String courseCode : userClasses){
@@ -31,6 +31,25 @@ public class Program {
             }
         }
         System.out.println(stagingGround);
+        //Compare times and build schedule
+        schedule.add(stagingGround.get(0));
+        int counter = 1;
+            for(Course courses : stagingGround){
+                //Comparisons
+                if(!schedule.get(counter - 1).getCourseCode().equals(courses.getCourseCode()) && courses.getStartTime().isAfter(schedule.get(counter-1).getEndTime())){
+                    schedule.add(courses);
+                    System.out.println(courses.getCourseCode() + " Added");
+                    counter++;
+                }
+                else{
+                    System.out.println(courses.getCourseCode() + "NOT ADDED DIMWIT");
+                }
+
+            }
+        //TODO Verify that all classes from userClasses have been added to the schedule
+        //TODO Run checks on the startDate and endDate of the Course to be able to build sprint 1 and sprint 2 schedules into 1
+
+        System.out.println(schedule);
 
         return schedule;
     }

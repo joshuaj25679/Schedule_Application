@@ -5,6 +5,8 @@ import java.time.format.DateTimeFormatter;
 
 public class Course extends Event{
 
+    //TODO Add startDate and endDate.
+
     private String sectionCode;
     private String courseCode;
     private String roomNumber;
