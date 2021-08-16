@@ -6,11 +6,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import org.controlsfx.control.spreadsheet.Grid;
 import prog.schedule_application.Main;
 import prog.schedule_application.controllers.Program;
@@ -35,6 +37,8 @@ public class JavaFXController implements Initializable {
 
 
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
+        Window owner = upload.getScene().getWindow();
+        Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes", "Enter Course Code for the classes you want added!");
         Parent root = FXMLLoader.load(Main.class.getResource("add-Class.fxml"));
         Stage window = (Stage) this.upload.getScene().getWindow();
         window.setScene(new Scene(root));
@@ -71,6 +75,8 @@ public class JavaFXController implements Initializable {
         TextArea courseListOutput = new TextArea();
         courseListOutput.setText(Program.scheduleCreator(Program.getUserCourses(), Program.buildCourses(Program.getPathName())).toString());
     }
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
