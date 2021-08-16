@@ -8,12 +8,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
-import org.controlsfx.control.spreadsheet.Grid;
 import prog.schedule_application.Main;
 import prog.schedule_application.controllers.Program;
 
@@ -73,7 +71,7 @@ public class JavaFXController implements Initializable {
         //Run scheduleCreator() with the userClasses
         //Print out to the Scroll Text Box the ArrayList<Course>
         TextArea courseListOutput = new TextArea();
-        courseListOutput.setText(Program.scheduleCreator(Program.getUserCourses(), Program.buildCourses(Program.getPathName())).toString());
+        courseListOutput.setText(Program.courseListCreator(Program.getUserCourses(), Program.buildCourses(Program.getPathName())).toString());
     }
 
 

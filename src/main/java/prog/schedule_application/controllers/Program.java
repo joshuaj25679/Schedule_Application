@@ -19,7 +19,7 @@ public class Program {
     private static String pathName = "src/main/files/test.pdf";
     //TODO Make a method to output schedule nicely
 
-    public static ArrayList<Course> scheduleCreator(ArrayList<String> userClasses, ArrayList<Course> courseList){
+    public static ArrayList<Course> courseListCreator(ArrayList<String> userClasses, ArrayList<Course> courseList){
         ArrayList<Course> schedule = new ArrayList<>();
         ArrayList<Course> stagingGround = new ArrayList<>();
 

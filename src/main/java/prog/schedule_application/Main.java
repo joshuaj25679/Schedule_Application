@@ -9,6 +9,7 @@ import prog.schedule_application.controllers.Program;
 import prog.schedule_application.models.Course;
 
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Main extends Application {
@@ -24,8 +25,14 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-//        String[] testUserCourse = new String[]{"CSC180", "ENG110", "MAT150", "DBT230", "PRO100"};
-//        Program.scheduleCreator(test, Program.buildCourses("src/main/files/test.pdf"));
+        //{"CSC180", "ENG110", "MAT150", "DBT230", "PRO100"}
+        ArrayList<String> testUserCourse = new ArrayList<>();
+        testUserCourse.add("CSC180");
+        testUserCourse.add("ENG110");
+        testUserCourse.add("MAT150");
+        testUserCourse.add("DBT230");
+        testUserCourse.add("PRO100");
+        Program.courseListCreator(testUserCourse, Program.buildCourses("src/main/files/test.pdf"));
         launch();
     }
 
