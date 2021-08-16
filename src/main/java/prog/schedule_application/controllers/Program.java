@@ -19,23 +19,23 @@ public class Program {
     private static String pathName = "src/main/files/test.pdf";
     //TODO Make a method to output schedule nicely
 
-    public static ArrayList<Course> courseListCreator(ArrayList<String> userClasses, ArrayList<Course> courseList){
+    public static ArrayList<Course> scheduleCreator(ArrayList<String> userClasses, ArrayList<Course> courseList){
         ArrayList<Course> schedule = new ArrayList<>();
-        ArrayList<Course> sprintOneCourses = new ArrayList<>();
+        ArrayList<Course> stagingGround = new ArrayList<>();
 
         for(String courseCode : userClasses){
             //Check the course list for all the courses to be taken and add them to staging ground
             for(Course course : courseList){
                 if(course.getCourseCode().equals(courseCode) && !course.getSectionCode().contains("2")) {
-                    sprintOneCourses.add(course);
+                    stagingGround.add(course);
                 }
             }
         }
-        System.out.println(sprintOneCourses);
+        System.out.println(stagingGround);
         //Compare times and build schedule
-        /*schedule.add(sprintOneCourses.get(0));
+        schedule.add(stagingGround.get(0));
         int counter = 1;
-            for(Course courses : sprintOneCourses){
+            for(Course courses : stagingGround){
                 //Comparisons
                 if(!schedule.get(counter - 1).getCourseCode().equals(courses.getCourseCode()) && courses.getStartTime().isAfter(schedule.get(counter-1).getEndTime())){
                     schedule.add(courses);
@@ -46,13 +46,13 @@ public class Program {
                     System.out.println(courses.getCourseCode() + "NOT ADDED DIMWIT");
                 }
 
-            }*/
+            }
         //TODO Verify that all classes from userClasses have been added to the schedule
         //TODO Run checks on the startDate and endDate of the Course to be able to build sprint 1 and sprint 2 schedules into 1
 
         System.out.println(schedule);
 
-        return sprintOneCourses;
+        return stagingGround;
     }
 
     public static String[] promptForClass() {
