@@ -37,7 +37,7 @@ public class JavaFXController implements Initializable {
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("add-Class.fxml"));
         Stage window = (Stage) this.upload.getScene().getWindow();
-        window.setScene(new Scene(root, 800, 600));
+        window.setScene(new Scene(root));
         window.show();
 
     }
