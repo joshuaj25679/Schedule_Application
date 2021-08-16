@@ -25,7 +25,6 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        //{"CSC180", "ENG110", "MAT150", "DBT230", "PRO100"}
         ArrayList<String> testUserCourse = new ArrayList<>();
         testUserCourse.add("CSC180");
         testUserCourse.add("ENG110");
@@ -33,7 +32,7 @@ public class Main extends Application {
         testUserCourse.add("DBT230");
         testUserCourse.add("PRO100");
         Program.courseListCreator(testUserCourse, Program.buildCourses("src/main/files/test.pdf"));
-        launch();
+        //launch();
     }
 
 }

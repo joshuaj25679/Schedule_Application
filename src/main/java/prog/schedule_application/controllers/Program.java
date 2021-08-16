@@ -21,21 +21,35 @@ public class Program {
 
     public static ArrayList<Course> courseListCreator(ArrayList<String> userClasses, ArrayList<Course> courseList){
         ArrayList<Course> schedule = new ArrayList<>();
-        ArrayList<Course> stagingGround = new ArrayList<>();
+        ArrayList<Course> sprintOneCourses = new ArrayList<>();
+        ArrayList<Course> sprintTwoCourses = new ArrayList<>();
 
+        System.out.println("\nSprint 1 Course List: \n");
         for(String courseCode : userClasses){
             //Check the course list for all the courses to be taken and add them to staging ground
             for(Course course : courseList){
                 if(course.getCourseCode().equals(courseCode) && !course.getSectionCode().contains("2")) {
-                    stagingGround.add(course);
+                    sprintOneCourses.add(course);
                 }
             }
         }
-        System.out.println(stagingGround);
+        printCourseList(sprintOneCourses);
+
+        System.out.println("\nSprint 2 Course List:");
+        for(String courseCode : userClasses){
+            //Check the course list for all the courses to be taken and add them to staging ground
+            for(Course course : courseList){
+                if(course.getCourseCode().equals(courseCode) && course.getSectionCode().contains("2")) {
+                    sprintTwoCourses.add(course);
+                }
+            }
+        }
+        printCourseList(sprintTwoCourses);
+
         //Compare times and build schedule
-        schedule.add(stagingGround.get(0));
+        /*schedule.add(sprintOneCourses.get(0));
         int counter = 1;
-            for(Course courses : stagingGround){
+            for(Course courses : sprintOneCourses){
                 //Comparisons
                 if(!schedule.get(counter - 1).getCourseCode().equals(courses.getCourseCode()) && courses.getStartTime().isAfter(schedule.get(counter-1).getEndTime())){
                     schedule.add(courses);
@@ -46,21 +60,18 @@ public class Program {
                     System.out.println(courses.getCourseCode() + "NOT ADDED DIMWIT");
                 }
 
-            }
-        //TODO Verify that all classes from userClasses have been added to the schedule
-        //TODO Run checks on the startDate and endDate of the Course to be able to build sprint 1 and sprint 2 schedules into 1
+            }*/
+        //System.out.println(schedule);
 
-        System.out.println(schedule);
-
-        return stagingGround;
+        return courseList;
     }
 
-    public static String[] promptForClass() {
-        String[] userClasses = new String[6];
-        for (int i = 0; i < 5; i++) {
-            userClasses[i] = promptForString("What is the Course Code (CSC180): ", false);
+    public static void printCourseList(ArrayList<Course> courseList){
+
+        for(Course courses : courseList){
+            System.out.println(courses.toString());
         }
-        return userClasses;
+
     }
 
     public static ArrayList<Course> buildCourses(String path) {
