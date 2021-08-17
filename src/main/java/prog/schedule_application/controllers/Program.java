@@ -42,6 +42,17 @@ public class Program {
                     }
                 }
                 printCourseList(sprintCourses);
+            case 3:
+                System.out.println("\nQuarter Course List:");
+                for(String courseCode : userClasses){
+                    //Check the course list for all the courses to be taken and add them to the list of sprint courses
+                    for(Course course : courseList){
+                        if(course.getCourseCode().equals(courseCode)) {
+                            sprintCourses.add(course);
+                        }
+                    }
+                }
+                printCourseList(sprintCourses);
         }
         return sprintCourses;
 
