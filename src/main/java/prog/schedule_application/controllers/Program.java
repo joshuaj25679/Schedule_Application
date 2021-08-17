@@ -1,10 +1,12 @@
 package prog.schedule_application.controllers;
 
 import prog.schedule_application.models.Course;
+import prog.schedule_application.models.Event;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -13,37 +15,36 @@ import java.util.regex.Pattern;
 public class Program {
     private static Pattern p = null;
     private static Matcher m = null;
-    private static ArrayList<String> inputCourses = new ArrayList<>();
+    private static ArrayList<String> userCourses = new ArrayList<>();
     private static String pathName = "src/main/files/test.pdf";
+    //TODO Make a method to output schedule nicely
 
-    public static ArrayList<Course> courseListCreator(int sprintTime, ArrayList<String> userClasses, ArrayList<Course> courseList){
-        ArrayList<Course> sprintCourses = new ArrayList<>();
+    public static ArrayList<Course> courseListCreator(ArrayList<String> userClasses, ArrayList<Course> courseList){
+        ArrayList<Course> schedule = new ArrayList<>();
+        ArrayList<Course> sprintOneCourses = new ArrayList<>();
+        ArrayList<Course> sprintTwoCourses = new ArrayList<>();
 
-        switch(sprintTime){
-            case 1:
-                System.out.println("\nSprint " + sprintTime +" Course List: \n");
-                for(String courseCode : userClasses){
-                    //Check the course list for all the courses to be taken and add them to staging ground
-                    for(Course course : courseList){
-                        if(course.getCourseCode().equals(courseCode) && !course.getSectionCode().contains("2")) {
-                            sprintCourses.add(course);
-                        }
-                    }
+        System.out.println("\nSprint 1 Course List: \n");
+        for(String courseCode : userClasses){
+            //Check the course list for all the courses to be taken and add them to staging ground
+            for(Course course : courseList){
+                if(course.getCourseCode().equals(courseCode) && !course.getSectionCode().contains("2")) {
+                    sprintOneCourses.add(course);
                 }
-                printCourseList(sprintCourses);
-            case 2:
-                System.out.println("\nSprint 2 Course List:");
-                for(String courseCode : userClasses){
-                    //Check the course list for all the courses to be taken and add them to the list of sprint courses
-                    for(Course course : courseList){
-                        if(course.getCourseCode().equals(courseCode) && course.getSectionCode().contains("2")) {
-                            sprintCourses.add(course);
-                        }
-                    }
-                }
-                printCourseList(sprintCourses);
+            }
         }
-        return sprintCourses;
+        printCourseList(sprintOneCourses);
+
+        System.out.println("\nSprint 2 Course List:");
+        for(String courseCode : userClasses){
+            //Check the course list for all the courses to be taken and add them to staging ground
+            for(Course course : courseList){
+                if(course.getCourseCode().equals(courseCode) && course.getSectionCode().contains("2")) {
+                    sprintTwoCourses.add(course);
+                }
+            }
+        }
+        printCourseList(sprintTwoCourses);
 
         //Compare times and build schedule
         /*schedule.add(sprintOneCourses.get(0));
@@ -61,6 +62,8 @@ public class Program {
 
             }*/
         //System.out.println(schedule);
+
+        return courseList;
     }
 
     public static void printCourseList(ArrayList<Course> courseList){
@@ -137,17 +140,17 @@ public class Program {
         Program.pathName = pathName;
     }
 
-    public static ArrayList<String> getInputCourses() {
-        return inputCourses;
+    public static ArrayList<String> getUserCourses() {
+        return userCourses;
     }
 
-    public static void setInputCourses(ArrayList<String> inputCourses) {
-        Program.inputCourses = inputCourses;
+    public static void setUserCourses(ArrayList<String> userCourses) {
+        Program.userCourses = userCourses;
     }
 
-    public static void addToInputCourses(String courseToAdd){
+    public static void addToUserCourses(String courseToAdd){
         String formattedInput = courseToAdd.toUpperCase();
         formattedInput = formattedInput.replaceAll(" ", "");
-        getInputCourses().add(formattedInput);
+        getUserCourses().add(formattedInput);
     }
 }
