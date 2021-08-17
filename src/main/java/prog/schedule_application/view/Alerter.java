@@ -12,4 +12,14 @@ public class Alerter {
         alert.initOwner(owner);
         alert.show();
     }
+
+    public static Alert returnAlert(Alert.AlertType alertType, Window owner, String title, String message) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle(title);
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.initOwner(owner);
+        alert.show();
+        return alert;
+    }
 }

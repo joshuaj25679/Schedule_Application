@@ -40,8 +40,7 @@ public class JavaFXController implements Initializable {
 
 
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
-//        Window owner = upload.getScene().getWindow();
-//        Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes", "Enter Course Code for the classes you want added!");
+
         Parent root = FXMLLoader.load(Main.class.getResource("courseCodes.fxml"));
         Stage window = (Stage) this.upload.getScene().getWindow();
         window.setScene(new Scene(root));
@@ -57,10 +56,17 @@ public class JavaFXController implements Initializable {
     }
 
     public void handleBtnSubmitCodes(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("add-Class.fxml"));
-        Stage window = (Stage) this.home.getScene().getWindow();
-        window.setScene(new Scene(root));
-        window.show();
+        Window owner = home.getScene().getWindow();
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION, "Continue?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+        a.showAndWait();
+        if (a.getResult() == ButtonType.YES){
+            Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes", "The Courses you selected will be shown on the left side. " +
+                    "Make selections for times and your selection will be added to the other side. Once done click submit to finalize changes.");
+            Parent root = FXMLLoader.load(Main.class.getResource("add-Class.fxml"));
+            Stage window = (Stage) this.home.getScene().getWindow();
+            window.setScene(new Scene(root));
+            window.show();
+        }
     }
 
     public void handleCloseButtonAction(ActionEvent event) {
