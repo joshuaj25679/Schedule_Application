@@ -33,7 +33,8 @@ public class Main extends Application {
         testUserCourse.add("PRO100");
         Program.courseListCreator(1, testUserCourse, Program.buildCourses("src/main/files/test.pdf"));
         Program.courseListCreator(2, testUserCourse, Program.buildCourses("src/main/files/test.pdf"));
-        launch();
+        Program.courseListCreator(3, testUserCourse, Program.buildCourses("src/main/files/test.pdf"));
+        //launch();
 
     }
 

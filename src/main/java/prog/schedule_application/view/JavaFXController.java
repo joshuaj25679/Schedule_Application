@@ -68,24 +68,15 @@ public class JavaFXController implements Initializable {
         stage.close();
     }
 
-    public void handleAddClassButton(ActionEvent event){
-        //Retrieve text in the text box
-        //Call addToUserCourses
-        //Display String[] to Big Text box
-        TextArea classCodeInput = new TextArea();
-        String userInput = classCodeInput.getText();
-        Program.addToInputCourses(userInput);
-        classCodeInput.setText(Program.getInputCourses().toString());
-    }
+
 
     public void handleSubmitButton(ActionEvent event){
-        //Get String[] array of user classes
-        //Run scheduleCreator() with the userClasses
-        //Print out to the Scroll Text Box the ArrayList<Course>
-        TextArea courseListOutput = new TextArea();
-        courseListOutput.setText(Program.courseListCreator(1, Program.getInputCourses(), Program.buildCourses(Program.getPathName())).toString());
-    }
+        //Get inputCourse
+        //run courseListCreator for the needed course
 
+
+
+    }
 
 
     @Override
