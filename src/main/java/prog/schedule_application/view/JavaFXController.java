@@ -50,10 +50,15 @@ public class JavaFXController implements Initializable {
 
 
     //COURSE CODE ITEMS
+    @FXML
     TextField txtcode;
+    @FXML
     Button btncodeadd;
+    @FXML
     Button btndone;
+    @FXML
     TextArea txtcoursearea;
+    @FXML
     ScrollBar scbar;
 
 
@@ -85,6 +90,13 @@ public class JavaFXController implements Initializable {
             window.setScene(new Scene(root));
             window.show();
         }
+    }
+
+    public void handleBtnAddCodes(ActionEvent actionEvent){
+        String code = txtcode.getText();
+        txtcode.clear();
+        Program.addToInputCourses(code);
+        txtcoursearea.setText(Program.getInputCourses().toString());
     }
 
     public void handleCloseButtonAction(ActionEvent event) {
