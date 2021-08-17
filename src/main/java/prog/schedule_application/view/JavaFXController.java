@@ -12,10 +12,14 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 import prog.schedule_application.Main;
 import prog.schedule_application.controllers.Program;
-
+import javafx.stage.FileChooser;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+
+
 
 public class JavaFXController implements Initializable {
     @FXML
@@ -25,11 +29,25 @@ public class JavaFXController implements Initializable {
     @FXML
     Button log;
     @FXML
-    Button addClass;
+    Button addAClass;
     @FXML
     Button submit;
     @FXML
     GridPane grid;
+    @FXML
+    Button browse;
+    @FXML
+    public ListView listview;
+    @FXML
+    Button submitToHome;
+
+    public void handleBtnSubmitHome(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
+        Stage window = (Stage) this.submitToHome.getScene().getWindow();
+        window.setScene(new Scene(root, 800, 600));
+        window.show();
+    }
+
 
     //COURSE CODE ITEMS
     TextField txtcode;
@@ -72,6 +90,18 @@ public class JavaFXController implements Initializable {
     public void handleCloseButtonAction(ActionEvent event) {
         Stage stage = (Stage) log.getScene().getWindow();
         stage.close();
+    }
+
+    public void handleFEButton(ActionEvent event) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
+       File selectedFile = fileChooser.showOpenDialog(null);
+        if (selectedFile != null) {
+            listview.getItems().add(selectedFile.getAbsolutePath());
+       }else {
+            System.out.println("File is not valid!");
+        }
+
     }
 
 
