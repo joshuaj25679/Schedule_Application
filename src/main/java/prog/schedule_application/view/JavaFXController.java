@@ -6,9 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -33,11 +31,18 @@ public class JavaFXController implements Initializable {
     @FXML
     GridPane grid;
 
+    //COURSE CODE ITEMS
+    TextField txtcode;
+    Button btncodeadd;
+    Button btndone;
+    TextArea txtcoursearea;
+    ScrollBar scbar;
+
 
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
-        Window owner = upload.getScene().getWindow();
-        Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes", "Enter Course Code for the classes you want added!");
-        Parent root = FXMLLoader.load(Main.class.getResource("add-Class.fxml"));
+//        Window owner = upload.getScene().getWindow();
+//        Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes", "Enter Course Code for the classes you want added!");
+        Parent root = FXMLLoader.load(Main.class.getResource("courseCodes.fxml"));
         Stage window = (Stage) this.upload.getScene().getWindow();
         window.setScene(new Scene(root));
         window.show();
@@ -47,7 +52,14 @@ public class JavaFXController implements Initializable {
     public void handleBtnHome(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
         Stage window = (Stage) this.home.getScene().getWindow();
-        window.setScene(new Scene(root, 800, 600));
+        window.setScene(new Scene(root));
+        window.show();
+    }
+
+    public void handleBtnSubmitCodes(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource("add-Class.fxml"));
+        Stage window = (Stage) this.home.getScene().getWindow();
+        window.setScene(new Scene(root));
         window.show();
     }
 
