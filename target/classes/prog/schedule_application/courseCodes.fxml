@@ -10,24 +10,23 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #434142;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.schedule_application.view.JavaFXController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="612.0" style="-fx-background-color: #434142;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.schedule_application.view.JavaFXController">
    <children>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="225.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="231.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="226.0" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="231.0" AnchorPane.topAnchor="51.0">
          <image>
             <Image url="@../../../../../../../Pictures/Saved%20Pictures/1548451949268.png" />
          </image>
       </ImageView>
-      <Text fill="#ffdd00" layoutX="119.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter All Course Codes Below">
+      <Text fill="#ffdd00" layoutX="125.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter All Course Codes Below" AnchorPane.bottomAnchor="381.97265625" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="124.107421875" AnchorPane.topAnchor="7.78515625">
          <font>
             <Font size="28.0" />
          </font>
       </Text>
-      <TextField fx:id="txtcode" alignment="CENTER" layoutX="226.0" layoutY="212.0" promptText="Enter Class Code" />
-      <Button fx:id="btncodeadd" layoutX="386.0" layoutY="212.0" mnemonicParsing="false" style="-fx-background-color: #222222;" text="ADD" textFill="#ffdd00" />
+      <TextField fx:id="txtcode" alignment="CENTER" layoutX="232.0" layoutY="212.0" promptText="Enter Class Code" AnchorPane.bottomAnchor="190.0" AnchorPane.leftAnchor="232.0" AnchorPane.rightAnchor="231.0" AnchorPane.topAnchor="212.0" />
+      <Button fx:id="btncodeadd" layoutX="388.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleBtnAddCodes" style="-fx-background-color: #222222;" text="ADD" textFill="#ffdd00" AnchorPane.bottomAnchor="190.0" AnchorPane.leftAnchor="388.0" AnchorPane.rightAnchor="183.0" AnchorPane.topAnchor="212.0" />
       <TextArea fx:id="txtcoursearea" layoutX="201.0" layoutY="296.0" prefHeight="90.0" prefWidth="200.0" />
       <ScrollBar fx:id="scbar" layoutX="401.0" layoutY="296.0" orientation="VERTICAL" prefHeight="90.0" prefWidth="14.0" />
-      <Button fx:id="btndone" layoutX="276.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleBtnSubmitCodes" style="-fx-background-color: #222222;" text="DONE" textFill="#ffdd00" />
-      <Button fx:id="home" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleBtnHome" style="-fx-background-color: #222222; -fx-border-color: #ffdd00;" text="HOME" textFill="#ffdd00" />
+      <Button fx:id="btndone" layoutX="276.0" layoutY="256.0" mnemonicParsing="false" onAction="#handleBtnSubmitCodes" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #222222;" text="DONE" textFill="#ffdd00" AnchorPane.bottomAnchor="146.0" AnchorPane.leftAnchor="276.0" AnchorPane.rightAnchor="274.0" AnchorPane.topAnchor="256.0" />
+      <Button fx:id="home" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleBtnHome" style="-fx-background-color: #222222; -fx-border-color: #ffdd00;" text="HOME" textFill="#ffdd00" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
    </children>
 </AnchorPane>
