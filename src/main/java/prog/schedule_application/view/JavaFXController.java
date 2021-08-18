@@ -113,7 +113,7 @@ public class JavaFXController implements Initializable {
        File selectedFile = fileChooser.showOpenDialog(null);
         //filePath.setText((filePath.getText()));
         if (selectedFile != null) {
-            filePath.setText(String.valueOf(listview.getItems().add(selectedFile.getAbsolutePath())));
+            filePath.setText((selectedFile.getAbsolutePath()));
         }else {
             System.out.println("File is not valid!");
         }
