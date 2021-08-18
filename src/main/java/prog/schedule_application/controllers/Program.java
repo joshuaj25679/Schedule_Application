@@ -16,16 +16,16 @@ public class Program {
     private static ArrayList<String> inputCourses = new ArrayList<>();
     private static String pathName = "src/main/files/test.pdf";
 
-    public static ArrayList<Course> courseListCreator(int sprintTime, ArrayList<String> userClasses, ArrayList<Course> courseList){
+    public static ArrayList<Course> courseListCreator(int sprintTime, ArrayList<String> userClasses, ArrayList<Course> courseList) {
         ArrayList<Course> sprintCourses = new ArrayList<>();
 
-        switch(sprintTime){
+        switch (sprintTime) {
             case 1:
-                System.out.println("\nSprint " + sprintTime +" Course List: \n");
-                for(String courseCode : userClasses){
+                System.out.println("\nSprint " + sprintTime + " Course List: \n");
+                for (String courseCode : userClasses) {
                     //Check the course list for all the courses to be taken and add them to staging ground
-                    for(Course course : courseList){
-                        if(course.getCourseCode().equals(courseCode) && !course.getSectionCode().contains("2")) {
+                    for (Course course : courseList) {
+                        if (course.getCourseCode().equals(courseCode) && !course.getSectionCode().contains("2")) {
                             sprintCourses.add(course);
                         }
                     }
@@ -33,10 +33,10 @@ public class Program {
                 printCourseList(sprintCourses);
             case 2:
                 System.out.println("\nSprint 2 Course List:");
-                for(String courseCode : userClasses){
+                for (String courseCode : userClasses) {
                     //Check the course list for all the courses to be taken and add them to the list of sprint courses
-                    for(Course course : courseList){
-                        if(course.getCourseCode().equals(courseCode) && course.getSectionCode().contains("2")) {
+                    for (Course course : courseList) {
+                        if (course.getCourseCode().equals(courseCode) && course.getSectionCode().contains("2")) {
                             sprintCourses.add(course);
                         }
                     }
@@ -44,10 +44,10 @@ public class Program {
                 printCourseList(sprintCourses);
             case 3:
                 System.out.println("\nQuarter Course List:");
-                for(String courseCode : userClasses){
+                for (String courseCode : userClasses) {
                     //Check the course list for all the courses to be taken and add them to the list of sprint courses
-                    for(Course course : courseList){
-                        if(course.getCourseCode().equals(courseCode)) {
+                    for (Course course : courseList) {
+                        if (course.getCourseCode().equals(courseCode)) {
                             sprintCourses.add(course);
                         }
                     }
@@ -55,7 +55,7 @@ public class Program {
                 printCourseList(sprintCourses);
         }
         return sprintCourses;
-
+    }
         //Compare times and build schedule
         /*schedule.add(sprintOneCourses.get(0));
         int counter = 1;
@@ -72,14 +72,14 @@ public class Program {
 
             }*/
         //System.out.println(schedule);
-    }
 
-    public static void printCourseList(ArrayList<Course> courseList){
-
+    public static String printCourseList(ArrayList<Course> courseList){
+        StringBuilder outPrint = new StringBuilder();
         for(Course courses : courseList){
             System.out.println(courses.toString());
+            outPrint.append(courses.toString());
         }
-
+        return outPrint.toString();
     }
 
     public static ArrayList<Course> buildCourses(String path) {
