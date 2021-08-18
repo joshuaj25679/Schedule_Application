@@ -1,5 +1,7 @@
 package prog.schedule_application.controllers;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
 import prog.schedule_application.models.Course;
 
 import java.io.BufferedReader;
@@ -11,6 +13,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Program {
+
+//    static String path= filePath.getText();
     private static Pattern p = null;
     private static Matcher m = null;
     private static ArrayList<String> inputCourses = new ArrayList<>();
