@@ -55,7 +55,7 @@ public class Course extends Event{
     public String toString(){
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh:mm a");
         StringBuilder sb = new StringBuilder();
-        sb.append("\n***COURSE***\n");
+        sb.append("***COURSE***\n");
         sb.append("Code: " + getCourseCode() + "\n");
         sb.append("Section: " + getSectionCode() + "\n");
         sb.append("Name: " + getEventName() + "\n");
