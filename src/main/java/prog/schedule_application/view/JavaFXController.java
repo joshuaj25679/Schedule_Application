@@ -61,6 +61,16 @@ public class JavaFXController implements Initializable {
     @FXML
     ScrollBar scbar;
 
+    //ADD COURSE ITEMS
+    @FXML
+    TextArea selectedClass;
+    @FXML
+    TextArea classList;
+    @FXML
+    Button auto;
+
+
+
 
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
 
