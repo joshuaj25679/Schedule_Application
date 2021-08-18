@@ -46,6 +46,9 @@ public class JavaFXController implements Initializable {
 
     public void handleBtnSubmitHome(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
+        if(filePath.getText().contains(".pdf")){
+            Program.setPathName(filePath.getText());
+        }
         Stage window = (Stage) this.submitToHome.getScene().getWindow();
         window.setScene(new Scene(root, 800, 600));
         window.show();
