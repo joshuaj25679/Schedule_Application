@@ -44,7 +44,7 @@ public class JavaFXController implements Initializable {
     public void handleBtnSubmitHome(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
         Stage window = (Stage) this.submitToHome.getScene().getWindow();
-        window.setScene(new Scene(root, 800, 600));
+        window.setScene(new Scene(root));
         window.show();
     }
 
