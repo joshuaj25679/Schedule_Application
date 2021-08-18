@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
+import javafx.stage.WindowEvent;
 import prog.schedule_application.Main;
 import prog.schedule_application.controllers.Program;
 import javafx.stage.FileChooser;
@@ -44,7 +45,7 @@ public class JavaFXController implements Initializable {
     public void handleBtnSubmitHome(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
         Stage window = (Stage) this.submitToHome.getScene().getWindow();
-        window.setScene(new Scene(root, 800, 600));
+        window.setScene(new Scene(root));
         window.show();
     }
 
@@ -100,6 +101,10 @@ public class JavaFXController implements Initializable {
             window.setScene(new Scene(root));
             window.show();
         }
+    }
+
+    public void handleWindowEvent(WindowEvent windowEvent) {
+        selectedClass.setText(Program.printCourseList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses("src/main/files/test.pdf"))));
     }
 
     public void handleBtnAddCodes(ActionEvent actionEvent){
