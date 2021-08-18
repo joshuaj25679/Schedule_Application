@@ -102,11 +102,8 @@ public class JavaFXController implements Initializable {
             Stage window = (Stage) this.home.getScene().getWindow();
             window.setScene(new Scene(root));
             window.show();
+            selectedClass.setText(Program.printCourseList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses("src/main/files/test.pdf"))));
         }
-    }
-
-    public void handleWindowEvent(WindowEvent windowEvent) {
-        selectedClass.setText(Program.printCourseList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses("src/main/files/test.pdf"))));
     }
 
     public void handleBtnAddCodes(ActionEvent actionEvent){
