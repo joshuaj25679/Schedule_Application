@@ -41,6 +41,8 @@ public class JavaFXController implements Initializable {
     public ListView listview;
     @FXML
     Button submitToHome;
+    @FXML
+    TextArea filePath;
 
     public void handleBtnSubmitHome(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
@@ -120,12 +122,14 @@ public class JavaFXController implements Initializable {
     }
 
     public void handleFEButton(ActionEvent event) {
+
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
        File selectedFile = fileChooser.showOpenDialog(null);
+        //filePath.setText((filePath.getText()));
         if (selectedFile != null) {
-            listview.getItems().add(selectedFile.getAbsolutePath());
-       }else {
+            filePath.setText((selectedFile.getAbsolutePath()));
+        }else {
             System.out.println("File is not valid!");
         }
 
