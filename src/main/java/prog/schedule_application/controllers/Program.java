@@ -18,6 +18,7 @@ public class Program {
     private static Pattern p = null;
     private static Matcher m = null;
     private static ArrayList<String> inputCourses = new ArrayList<>();
+    private static ArrayList<Course> courseList = new ArrayList<>();
     private static String pathName = "src/main/files/test.pdf";
 
     public static ArrayList<Course> courseListCreator(int sprintTime, ArrayList<String> userClasses, ArrayList<Course> courseList) {
@@ -117,39 +118,20 @@ public class Program {
         return courseList;
     }
 
-    public static String promptForString(String prompt, boolean allowBlank) {
-        if (prompt == null || prompt.isBlank()) {
-            throw new IllegalArgumentException("The prompt cannot be null, empty, or just white space. prompt=" + prompt);
-        }
-
-        String input = null;
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        boolean inputIsInvalid = true;
-
-        do {
-            System.out.println(prompt);
-            try {
-                input = br.readLine();
-                inputIsInvalid = input == null || (!allowBlank && input.isBlank());
-
-                if (inputIsInvalid) {
-                    System.out.println("Your input was invalid. Please, try again.");
-                }
-            } catch (IOException ioe) {
-                System.out.println("There was a problem and your input was not received. Please, try again.");
-            }
-
-        } while (inputIsInvalid);
-
-        return input;
-    }
-
     public static String getPathName() {
         return pathName;
     }
 
     public static void setPathName(String pathName) {
         Program.pathName = pathName;
+    }
+
+    public static ArrayList<Course> getCourseList() {
+        return courseList;
+    }
+
+    public static void setCourseList(ArrayList<Course> courseList) {
+        Program.courseList = courseList;
     }
 
     public static ArrayList<String> getInputCourses() {
@@ -163,6 +145,14 @@ public class Program {
     public static void addToInputCourses(String courseToAdd){
         String formattedInput = courseToAdd.toUpperCase();
         formattedInput = formattedInput.replaceAll(" ", "");
-        getInputCourses().add(formattedInput);
+        String regex = "([A-Z]{3}[0-9]{3})";
+        p = Pattern.compile(regex);
+        m = p.matcher(formattedInput);
+        if(m.find()){
+            getInputCourses().add(formattedInput);
+        }
+        else{
+            System.out.println("Invalid Course Code Format");
+        }
     }
 }

@@ -79,7 +79,7 @@ public class JavaFXController implements Initializable {
     @FXML
     Button auto;
     @FXML
-    Button btnTest;
+    Button btnShowCourseList;
 
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
 
@@ -109,17 +109,20 @@ public class JavaFXController implements Initializable {
             window.setScene(new Scene(root));
             window.show();
 
-            //selectedClass.setText(Program.printCourseList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses("src/main/files/test.pdf"))));
+            //selectedClass.setText(Program.printCourseList(Program.courseListCreator(3, Program.getInputCourses(), Program.getCourseList)));
         }
 
     }
 
-    public void onClickRunSetTextTest(ActionEvent actionEvent){
-        selectedClass.setText("Hello");
-        classList.setText("Hello");
+    public void handleShowCourseList(ActionEvent actionEvent){
+        //This code is to generate the Quarter Course List only once instead of everytime we filter it
+        Program.setCourseList(Program.buildCourses(Program.getPathName()));
+        selectedClass.clear();
+        selectedClass.setText(Program.printCourseList(Program.courseListCreator(3, Program.getInputCourses(), Program.getCourseList())));
     }
 
     public void handleBtnAddCodes(ActionEvent actionEvent){
+        //Show the Current Array when page starts also
         String code = txtcode.getText();
         txtcode.clear();
         Program.addToInputCourses(code);
