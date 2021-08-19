@@ -23,7 +23,12 @@ public class Course extends Event{
     }
 
     public void setSectionCode(String sectionCode) {
-        this.sectionCode = sectionCode;
+        if(sectionCode == null) {
+            this.sectionCode = "N/A";
+        }
+        else{
+            this.sectionCode = sectionCode;
+        }
     }
 
     public String getRoomNumber(){
