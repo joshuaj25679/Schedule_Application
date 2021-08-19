@@ -13,13 +13,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Program {
+    @FXML
+    static TextArea filePath;
 
 //    static String path= filePath.getText();
     private static Pattern p = null;
     private static Matcher m = null;
     private static ArrayList<String> inputCourses = new ArrayList<>();
     private static ArrayList<Course> courseList = new ArrayList<>();
-    private static String pathName = "src/main/files/test.pdf";
+    private static String pathName = String.valueOf(filePath);
 
     public static ArrayList<Course> courseListCreator(int sprintTime, ArrayList<String> userClasses, ArrayList<Course> courseList) {
         ArrayList<Course> sprintCourses = new ArrayList<>();
