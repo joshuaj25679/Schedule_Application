@@ -46,6 +46,7 @@ public class JavaFXController implements Initializable {
         if(filePath.getText().contains(".pdf")){
             Program.setPathName(filePath.getText());
         }
+        System.out.println(Program.getPathName());
         Stage window = (Stage) this.submitToHome.getScene().getWindow();
         window.setScene(new Scene(root));
         window.show();
