@@ -10,23 +10,23 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #434142;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.schedule_application.view.JavaFXController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #434142;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.schedule_application.view.JavaFXController">
    <children>
-      <ImageView fx:id="img" fitHeight="150.0" fitWidth="200.0" layoutX="225.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img" fitHeight="202.0" fitWidth="226.0" layoutX="314.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../files/neumont.png" />
          </image>
       </ImageView>
-      <Text fill="#ffdd00" layoutX="119.0" layoutY="44.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter All Course Codes Below">
+      <Text fill="#ffdd00" layoutX="219.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter All Course Codes Below">
          <font>
             <Font size="28.0" />
          </font>
       </Text>
-      <TextField fx:id="txtcode" alignment="CENTER" layoutX="226.0" layoutY="212.0" promptText="Enter Class Code" />
-      <Button fx:id="btncodeadd" layoutX="386.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleBtnAddCodes" style="-fx-background-color: #222222;" text="ADD" textFill="#ffdd00" />
-      <TextArea fx:id="txtcoursearea" layoutX="201.0" layoutY="296.0" prefHeight="90.0" prefWidth="200.0" />
-      <ScrollBar fx:id="scbar" layoutX="401.0" layoutY="296.0" orientation="VERTICAL" prefHeight="90.0" prefWidth="14.0" />
-      <Button fx:id="btndone" layoutX="276.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleBtnSubmitCodes" style="-fx-background-color: #222222;" text="DONE" textFill="#ffdd00" />
-      <Button fx:id="home" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleBtnHome" style="-fx-background-color: #222222; -fx-border-color: #ffdd00;" text="HOME" textFill="#ffdd00" />
+      <TextField fx:id="txtcode" alignment="CENTER" layoutX="341.0" layoutY="300.0" promptText="Enter Class Code" />
+      <Button fx:id="btncodeadd" layoutX="509.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleBtnAddCodes" style="-fx-background-color: #222222;" text="ADD" textFill="#ffdd00" />
+      <TextArea fx:id="txtcoursearea" layoutX="315.0" layoutY="427.0" prefHeight="90.0" prefWidth="200.0" />
+      <ScrollBar fx:id="scbar" layoutX="515.0" layoutY="427.0" orientation="VERTICAL" prefHeight="90.0" prefWidth="14.0" />
+      <Button fx:id="btndone" layoutX="391.0" layoutY="363.0" mnemonicParsing="false" onAction="#handleBtnSubmitCodes" style="-fx-background-color: #222222;" text="DONE" textFill="#ffdd00" />
+      <Button fx:id="home" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleBtnHome" style="-fx-background-color: #222222; -fx-border-color: #ffdd00;" text="HOME" textFill="#ffdd00" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="14.0" />
    </children>
 </AnchorPane>

@@ -36,8 +36,6 @@ public class JavaFXController implements Initializable {
     @FXML
     Button submit;
     @FXML
-    GridPane grid;
-    @FXML
     Button browse;
     @FXML
     public ListView listview;
@@ -52,7 +50,7 @@ public class JavaFXController implements Initializable {
             Program.setPathName(filePath.getText());
         }
         Stage window = (Stage) this.submitToHome.getScene().getWindow();
-        window.setScene(new Scene(root, 800, 600));
+        window.setScene(new Scene(root));
         window.show();
     }
 
@@ -102,21 +100,20 @@ public class JavaFXController implements Initializable {
         Alert a = new Alert(Alert.AlertType.CONFIRMATION, "Continue?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
         a.showAndWait();
         if (a.getResult() == ButtonType.YES){
-            Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes", "The Courses you selected will be shown on the left side. " +
-                    "Make selections for times and your selection will be added to the other side. Once done click submit to finalize changes.");
             Parent root = FXMLLoader.load(Main.class.getResource("add-Class.fxml"));
             Stage window = (Stage) this.home.getScene().getWindow();
-            window.setScene(new Scene(root));
+            window.setScene(new Scene(root, 800, 600));
             window.show();
-
-            //selectedClass.setText(Program.printCourseList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses("src/main/files/test.pdf"))));
+            Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes", "The Courses you selected will be shown on the left side. " +
+                    "Make selections for times and your selection will be added to the other side. Once done click submit to finalize changes. Select the button called Classes to begin.");
         }
 
     }
 
     public void onClickRunSetTextTest(ActionEvent actionEvent){
-        selectedClass.setText("Hello");
-        classList.setText("Hello");
+//        selectedClass.setText("Hello");
+//        classList.setText("Hello");
+        selectedClass.setText(Program.printCourseList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses("src/main/files/test.pdf"))));
     }
 
     public void handleBtnAddCodes(ActionEvent actionEvent){
