@@ -107,7 +107,7 @@ public class Program {
                 }
                 String eventName = m.group(3);
                 String days = m.group(11);
-                String sectionCode = m.group(2);
+                String sectionCode = m.group(2) != null ? m.group(2) : "N/A";
                 String courseCode = m.group(1);
                 String roomNumber = m.group(12);
                 Boolean isRequired = true;
