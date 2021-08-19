@@ -7,7 +7,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.schedule_application.view.JavaFXController">
    <children>
-      <Pane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #222222;">
+      <Pane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #434142;">
          <children>
             <TextArea fx:id="selectedClass" editable="false" layoutX="14.0" layoutY="126.0" prefHeight="350.0" prefWidth="300.0" />
             <TextArea fx:id="classList" editable="false" layoutX="486.0" layoutY="126.0" prefHeight="350.0" prefWidth="300.0" />
