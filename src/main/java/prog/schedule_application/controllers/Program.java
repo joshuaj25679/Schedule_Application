@@ -83,6 +83,7 @@ public class Program {
         for(Course courses : courseList){
             System.out.println(courses.toString());
             outPrint.append(courses.toString());
+            outPrint.append("\n");
         }
         return outPrint.toString();
     }

@@ -21,9 +21,6 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
-
-
 public class JavaFXController implements Initializable {
     @FXML
     Button upload;
