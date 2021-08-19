@@ -78,16 +78,6 @@ public class Program {
             }*/
         //System.out.println(schedule);
 
-    public static String printCourseList(ArrayList<Course> courseList){
-        StringBuilder outPrint = new StringBuilder();
-        for(Course courses : courseList){
-            System.out.println(courses.toString());
-            outPrint.append(courses.toString());
-            outPrint.append("\n");
-        }
-        return outPrint.toString();
-    }
-
     public static ArrayList<Course> buildCourses(String path) {
         ArrayList<Course> courseList = new ArrayList<>();
         int counter = 0;
@@ -117,6 +107,24 @@ public class Program {
             }
         }
         return courseList;
+    }
+
+    public static String printCourseList(ArrayList<Course> courseList){
+        StringBuilder outPrint = new StringBuilder();
+        for(Course courses : courseList){
+            //System.out.println(courses.toString());
+            outPrint.append(courses.toString());
+            outPrint.append("\n");
+        }
+        return outPrint.toString();
+    }
+
+    public static ArrayList<String> printSelectedCourseList(ArrayList<Course> courseList){
+        ArrayList<String> courseInfoToDisplay = new ArrayList<>();
+        for(Course courses : courseList){
+            courseInfoToDisplay.add(courses.getCourseCode() + " " + courses.getSectionCode());
+        }
+        return  courseInfoToDisplay;
     }
 
     public static String getPathName() {
