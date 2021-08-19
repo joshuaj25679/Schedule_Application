@@ -31,9 +31,9 @@ public class Main extends Application {
         testUserCourse.add("MAT150");
         testUserCourse.add("DBT230");
         testUserCourse.add("PRO100");
-        //Program.courseListCreator(1, testUserCourse, Program.buildCourses("src/main/files/test.pdf"));
-        //Program.courseListCreator(2, testUserCourse, Program.buildCourses("src/main/files/test.pdf"));
-        //Program.courseListCreator(3, testUserCourse, Program.buildCourses("src/main/files/test.pdf"));
+        Program.courseListCreator(1, testUserCourse, Program.buildCourses("src/main/files/test.pdf"));
+        Program.courseListCreator(2, testUserCourse, Program.buildCourses("src/main/files/test.pdf"));
+        Program.courseListCreator(3, testUserCourse, Program.buildCourses("src/main/files/test.pdf"));
         launch();
     }
 
