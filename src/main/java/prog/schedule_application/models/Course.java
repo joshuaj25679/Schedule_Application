@@ -23,7 +23,7 @@ public class Course extends Event{
     }
 
     public void setSectionCode(String sectionCode) {
-        this.sectionCode = super.dataChecker("([A-Z0-9]{1,2})", sectionCode);
+        this.sectionCode = sectionCode;
     }
 
     public String getRoomNumber(){
