@@ -34,7 +34,7 @@ public class Main extends Application {
         Program.courseListCreator(1, testUserCourse, Program.buildCourses("src/main/files/test.pdf"));
         Program.courseListCreator(2, testUserCourse, Program.buildCourses("src/main/files/test.pdf"));
         Program.courseListCreator(3, testUserCourse, Program.buildCourses("src/main/files/test.pdf"));
-//        launch();
+        launch();
         System.out.println(Program.buildCourses("src/main/files/test.pdf"));
     }
 
