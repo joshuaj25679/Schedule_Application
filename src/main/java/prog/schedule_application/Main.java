@@ -29,16 +29,16 @@ public class Main extends Application {
 
 
     public static void main(String[] args) {
-        ArrayList<String> testUserCourse = new ArrayList<>();
-        testUserCourse.add("CSC180");
-        testUserCourse.add("ENG110");
-        testUserCourse.add("MAT150");
-        testUserCourse.add("DBT230");
-        testUserCourse.add("PRO100");
+//        ArrayList<String> testUserCourse = new ArrayList<>();
+//        testUserCourse.add("CSC180");
+//        testUserCourse.add("ENG110");
+//        testUserCourse.add("MAT150");
+//        testUserCourse.add("DBT230");
+//        testUserCourse.add("PRO100");
         launch();
-        Program.courseListCreator(1, testUserCourse, Program.buildCourses(String.valueOf(filePath)));
-        Program.courseListCreator(2, testUserCourse, Program.buildCourses(String.valueOf(filePath)));
-        Program.courseListCreator(3, testUserCourse, Program.buildCourses(String.valueOf(filePath)));
+//        Program.courseListCreator(1, testUserCourse, Program.buildCourses(String.valueOf(filePath)));
+//        Program.courseListCreator(2, testUserCourse, Program.buildCourses(String.valueOf(filePath)));
+//        Program.courseListCreator(3, testUserCourse, Program.buildCourses(String.valueOf(filePath)));
     }
 
 }
