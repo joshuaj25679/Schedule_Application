@@ -29,7 +29,6 @@ public class Course extends Event{
         else{
             this.sectionCode = sectionCode;
         }
-        this.sectionCode = sectionCode;
     }
 
     public String getRoomNumber(){
