@@ -35,7 +35,6 @@ public class Main extends Application {
 //        testUserCourse.add("MAT150");
 //        testUserCourse.add("DBT230");
 //        testUserCourse.add("PRO100");
-            Program.buildCourses(Program.getPathName());
             launch();
 //        Program.courseListCreator(1, testUserCourse, Program.buildCourses(String.valueOf(filePath)));
 //        Program.courseListCreator(2, testUserCourse, Program.buildCourses(String.valueOf(filePath)));
