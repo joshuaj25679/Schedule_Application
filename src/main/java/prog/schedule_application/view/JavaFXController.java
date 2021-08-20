@@ -111,7 +111,7 @@ public class JavaFXController implements Initializable {
     public void onClickRunSetTextTest(ActionEvent actionEvent){
 //        selectedClass.setText("Hello");
 //        classList.setText("Hello");
-        selectedClass.setText(Program.printCourseList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses("src/main/files/test.pdf"))));
+        selectedClass.setText(Program.printCourseList(Program.courseListCreator(3, Program.getInputCourses(), Program.getCourseList())));
     }
 
     public void handleBtnAddCodes(ActionEvent actionEvent){
