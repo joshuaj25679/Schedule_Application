@@ -1,5 +1,4 @@
 package prog.schedule_application;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -9,7 +8,6 @@ import javafx.fxml.FXML;
 import org.controlsfx.control.spreadsheet.Grid;
 import prog.schedule_application.controllers.Program;
 import prog.schedule_application.models.Course;
-
 import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -26,12 +24,8 @@ public class Main extends Application {
         stage.show();
     }
 
-
-
     public static void main(String[] args) {
         launch();
 
     }
-
 }
-

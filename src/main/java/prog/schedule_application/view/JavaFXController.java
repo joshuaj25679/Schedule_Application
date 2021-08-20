@@ -52,6 +52,9 @@ public class JavaFXController implements Initializable {
         }
         System.out.println(Program.getPathName());
         Program.setCourseList(Program.buildCourses(Program.getPathName()));
+        if(Program.courseList.isEmpty()){
+
+        }
         Stage window = (Stage) this.submitToHome.getScene().getWindow();
         window.setScene(new Scene(root));
         window.show();
@@ -154,8 +157,7 @@ public class JavaFXController implements Initializable {
 
 
     public void handleSubmitButton(ActionEvent event){
-        //Get inputCourse
-        //run courseListCreator for the needed course
+        //TODO get
 
 
 

@@ -20,7 +20,7 @@ public class Program {
     private static Pattern p = null;
     private static Matcher m = null;
     private static ArrayList<String> inputCourses = new ArrayList<>();
-    private static ArrayList<Course> courseList = new ArrayList<>();
+    public static ArrayList<Course> courseList = new ArrayList<>();
     private static String pathName = String.valueOf(filePath);
 
     public static ArrayList<Course> courseListCreator(int sprintTime, ArrayList<String> userClasses, ArrayList<Course> courseList) {
@@ -81,7 +81,6 @@ public class Program {
         //System.out.println(schedule);
 
     public static ArrayList<Course> buildCourses(String path) {
-        ArrayList<Course> courseList = new ArrayList<>();
         int counter = 0;
         String regex = "^([A-Z]{3}[0-9]{3})[ ]([A-Z0-9]{0,2}[ ])?([A-z\\s\\:\\-]{1,})[ ]([0-9]{1})[ ]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[-]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[ ]([MTWHF]{1,5})[ ]([0-9]{3})";
         PDFtoTXT.test(path);
@@ -105,6 +104,9 @@ public class Program {
                 Boolean isRequired = true;
                 counter += 1;
                 Course course = new Course(startTime, endTime, eventName, days, sectionCode, courseCode, roomNumber, isRequired);
+                if (courseList.contains(course)){
+                    continue;
+                }
                 courseList.add(course);
             }
         }
