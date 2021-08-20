@@ -29,6 +29,8 @@ public class JavaFXController implements Initializable {
     @FXML
     Button upload;
     @FXML
+    Button btnfile;
+    @FXML
     Button home;
     @FXML
     Button log;
@@ -85,12 +87,17 @@ public class JavaFXController implements Initializable {
     ComboBox<Course> comboBox;
 
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
-
         Parent root = FXMLLoader.load(Main.class.getResource("courseCodes.fxml"));
         Stage window = (Stage) this.upload.getScene().getWindow();
         window.setScene(new Scene(root));
         window.show();
+    }
 
+    public void handleBtnFileUpload(ActionEvent actionEvent) throws IOException{
+        Parent root = FXMLLoader.load(Main.class.getResource("fileExplorer.fxml"));
+        Stage window = (Stage) this.btnfile.getScene().getWindow();
+        window.setScene(new Scene(root));
+        window.show();
     }
 
     public void handleBtnHome(ActionEvent actionEvent) throws IOException {
