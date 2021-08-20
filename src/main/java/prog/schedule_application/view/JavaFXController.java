@@ -51,27 +51,6 @@ public class JavaFXController implements Initializable {
     @FXML
     Button btnFile;
 
-
-    public void handleBtnSubmitHome(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
-        if(filePath.getText().contains(".pdf")){
-            Program.setPathName(filePath.getText());
-
-        System.out.println(Program.getPathName());
-        Program.setCourseList(Program.buildCourses(Program.getPathName()));
-        if(Program.courseList.isEmpty()){
-
-        }
-        Stage window = (Stage) this.submitToHome.getScene().getWindow();
-        window.setScene(new Scene(root));
-        window.show();
-    }else {
-            lblStatus.setText("Either PDF file is not found or supported. Try again, or choose a different PDF file.");
-        }
-       PDFtoTXT.test(filePath.toString());
-    }
-
-
     //COURSE CODE ITEMS
     @FXML
     TextField txtcode;
@@ -98,18 +77,41 @@ public class JavaFXController implements Initializable {
     @FXML
     ComboBox<Course> comboBox;
 
-    public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
+    //File Explorer Screen
+    public void handleBtnSubmitHome(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
+        if(filePath.getText().contains(".pdf")){
+            Program.setPathName(filePath.getText());
+            System.out.println(Program.getPathName());
+            Program.setCourseList(Program.buildCourses(Program.getPathName()));
+            if(Program.courseList.isEmpty()){
+            }
+            Stage window = (Stage) this.submitToHome.getScene().getWindow();
+            window.setScene(new Scene(root));
+            window.show();
+        }else {
+            lblStatus.setText("Either PDF file is not found or supported. Try again, or choose a different PDF file.");
+        }
+        PDFtoTXT.test(filePath.toString());
+    }
 
-        Parent root = FXMLLoader.load(Main.class.getResource("courseCodes.fxml"));
-        Stage window = (Stage) this.upload.getScene().getWindow();
-        window.setScene(new Scene(root));
-        window.show();
+    public void handleFEButton(ActionEvent event) {
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
+        File selectedFile = fileChooser.showOpenDialog(null);
+        if (selectedFile != null) {
+            filePath.setText((selectedFile.getAbsolutePath()));
+        }else {
+            System.out.println("File is not valid!");
+        }
 
     }
 
-    public void handleBtnHome(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
-        Stage window = (Stage) this.home.getScene().getWindow();
+    //Home Screen
+    public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource("courseCodes.fxml"));
+        Stage window = (Stage) this.upload.getScene().getWindow();
         window.setScene(new Scene(root));
         window.show();
     }
@@ -119,7 +121,26 @@ public class JavaFXController implements Initializable {
         Stage window = (Stage) this.upload.getScene().getWindow();
         window.setScene(new Scene(root));
         window.show();
+    }
 
+    public void handleCloseButtonAction(ActionEvent event) {
+        Stage stage = (Stage) log.getScene().getWindow();
+        stage.close();
+    }
+
+    //User Input Screen
+    public void handleBtnHome(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
+        Stage window = (Stage) this.home.getScene().getWindow();
+        window.setScene(new Scene(root));
+        window.show();
+    }
+
+    public void handleBtnAddCodes(ActionEvent actionEvent){
+        String code = txtcode.getText();
+        txtcode.clear();
+        Program.addToInputCourses(code);
+        txtcoursearea.setText(Program.getInputCourses().toString());
     }
 
     public void handleBtnSubmitCodes(ActionEvent actionEvent) throws IOException {
@@ -134,55 +155,16 @@ public class JavaFXController implements Initializable {
             Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes", "Select the button called Classes to begin. " +
                     "The Drop down menu will contain the classes with different times and sections. Once you have selected you class click add class and once done press submit to finish.");
         }
-
     }
 
+    //Schedule Creator Screen
     public void onClickAddCourses(ActionEvent actionEvent){
-//        selectedClass.setText("Hello");
-//        classList.setText("Hello");
         if (comboBox.getItems().isEmpty()){
             ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses("src/main/files/test.pdf")));
             comboBox.getItems().addAll(classes);
         }
-//        selectedClass.setText(Program.printCourseList());
     }
 
-    public void handleBtnAddCodes(ActionEvent actionEvent){
-        String code = txtcode.getText();
-        txtcode.clear();
-        Program.addToInputCourses(code);
-        txtcoursearea.setText(Program.getInputCourses().toString());
-    }
-
-    public void handleCloseButtonAction(ActionEvent event) {
-        Stage stage = (Stage) log.getScene().getWindow();
-        stage.close();
-    }
-
-    public void handleFEButton(ActionEvent event) {
-
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
-       File selectedFile = fileChooser.showOpenDialog(null);
-        //filePath.setText((filePath.getText()));
-        if (selectedFile != null) {
-            filePath.setText((selectedFile.getAbsolutePath()));
-        }else {
-            System.out.println("File is not valid!");
-        }
-
-    }
-
-
-
-    public void handleSubmitButton(ActionEvent event){
-        //Get inputCourse
-        //run courseListCreator for the needed course
-        //TODO get
-
-
-
-    }
 
 
     @Override
