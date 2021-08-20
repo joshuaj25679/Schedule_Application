@@ -15,7 +15,9 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import javafx.stage.WindowEvent;
+import org.apache.pdfbox.pdmodel.interactive.annotation.handlers.PDAbstractAppearanceHandler;
 import prog.schedule_application.Main;
+import prog.schedule_application.controllers.PDFtoTXT;
 import prog.schedule_application.controllers.Program;
 import javafx.stage.FileChooser;
 import prog.schedule_application.models.Course;
@@ -44,12 +46,15 @@ public class JavaFXController implements Initializable {
     Button submitToHome;
     @FXML
     TextArea filePath;
+    @FXML
+    Label lblStatus;
+
 
     public void handleBtnSubmitHome(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
         if(filePath.getText().contains(".pdf")){
             Program.setPathName(filePath.getText());
-        }
+
         System.out.println(Program.getPathName());
         Program.setCourseList(Program.buildCourses(Program.getPathName()));
         if(Program.courseList.isEmpty()){
@@ -58,6 +63,10 @@ public class JavaFXController implements Initializable {
         Stage window = (Stage) this.submitToHome.getScene().getWindow();
         window.setScene(new Scene(root));
         window.show();
+    }else {
+            lblStatus.setText("Either PDF file is not found or supported. Try again, or choose a different PDF file.");
+        }
+       PDFtoTXT.test(filePath.toString());
     }
 
 

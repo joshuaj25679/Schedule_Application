@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.Pane?>
 
@@ -9,5 +10,6 @@
       <TextArea fx:id="filePath" layoutX="310.0" layoutY="263.0" prefHeight="38.0" prefWidth="181.0" promptText="INSERT FILE PATH" />
       <Button fx:id="browse" layoutX="503.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleFEButton" text="BROWSE" />
       <Button fx:id="submitToHome" layoutX="372.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleBtnSubmitHome" text="SUBMIT" />
+      <Label fx:id="lblStatus" layoutX="128.0" layoutY="181.0" prefHeight="51.0" prefWidth="531.0" textFill="RED" />
    </children>
 </Pane>
