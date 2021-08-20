@@ -15,7 +15,9 @@ import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import javafx.stage.WindowEvent;
+import org.apache.pdfbox.pdmodel.interactive.annotation.handlers.PDAbstractAppearanceHandler;
 import prog.schedule_application.Main;
+import prog.schedule_application.controllers.PDFtoTXT;
 import prog.schedule_application.controllers.Program;
 import javafx.stage.FileChooser;
 import prog.schedule_application.models.Course;
@@ -45,18 +47,26 @@ public class JavaFXController implements Initializable {
     @FXML
     TextArea filePath;
     @FXML
-    Button btnFile;
+    Label lblStatus;
+
 
     public void handleBtnSubmitHome(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
         if(filePath.getText().contains(".pdf")){
             Program.setPathName(filePath.getText());
-        }
+
         System.out.println(Program.getPathName());
         Program.setCourseList(Program.buildCourses(Program.getPathName()));
+        if(Program.courseList.isEmpty()){
+
+        }
         Stage window = (Stage) this.submitToHome.getScene().getWindow();
         window.setScene(new Scene(root));
         window.show();
+    }else {
+            lblStatus.setText("Either PDF file is not found or supported. Try again, or choose a different PDF file.");
+        }
+       PDFtoTXT.test(filePath.toString());
     }
 
 
@@ -75,14 +85,14 @@ public class JavaFXController implements Initializable {
     ImageView img;
 
     //ADD COURSE ITEMS
-//    @FXML
-//    TextArea selectedClass;
+    @FXML
+    TextArea selectedClass;
     @FXML
     TextArea classList;
     @FXML
-    Button btnAddCourse;
+    Button auto;
     @FXML
-    Button btnClasses;
+    Button btnTest;
     @FXML
     ComboBox<Course> comboBox;
 
@@ -102,14 +112,6 @@ public class JavaFXController implements Initializable {
         window.show();
     }
 
-    public void handleBtnFileUpload(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("fileExplorer.fxml"));
-        Stage window = (Stage) this.upload.getScene().getWindow();
-        window.setScene(new Scene(root));
-        window.show();
-
-    }
-
     public void handleBtnSubmitCodes(ActionEvent actionEvent) throws IOException {
         Window owner = home.getScene().getWindow();
         Alert a = new Alert(Alert.AlertType.CONFIRMATION, "Continue?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
@@ -119,14 +121,13 @@ public class JavaFXController implements Initializable {
             Stage window = (Stage) this.home.getScene().getWindow();
             window.setScene(new Scene(root, 800, 600));
             window.show();
-            Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes", "Select the button called Classes to begin. " +
-                    "The Drop down menu will contain the classes with different times and sections. Once you have selected you class click add class and once done press submit to finish.");
+            Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes", "The Courses you selected will be shown on the left side. " +
+                    "Make selections for times and your selection will be added to the other side. Once done click submit to finalize changes. Select the button called Classes to begin.");
         }
-
 
     }
 
-    public void onClickAddCourses(ActionEvent actionEvent){
+    public void onClickRunSetTextTest(ActionEvent actionEvent){
 //        selectedClass.setText("Hello");
 //        classList.setText("Hello");
         if (comboBox.getItems().isEmpty()){
@@ -165,8 +166,7 @@ public class JavaFXController implements Initializable {
 
 
     public void handleSubmitButton(ActionEvent event){
-        //Get inputCourse
-        //run courseListCreator for the needed course
+        //TODO get
 
 
 

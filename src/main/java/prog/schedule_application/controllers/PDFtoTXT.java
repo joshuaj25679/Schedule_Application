@@ -23,9 +23,10 @@ public class PDFtoTXT {
             //Retrieving text from PDF document
             String text = pdfStripper.getText(document);
             pdfStrings = text.split("\n");
-            //System.out.println(text);
+            System.out.println(text);
             //Closing the document
             document.close();
+
             } catch (IOException ioException) {
             ioException.printStackTrace();
         }
