@@ -1,5 +1,7 @@
 package prog.schedule_application.view;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,8 +18,12 @@ import javafx.stage.WindowEvent;
 import prog.schedule_application.Main;
 import prog.schedule_application.controllers.Program;
 import javafx.stage.FileChooser;
+import prog.schedule_application.models.Course;
+
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -76,14 +82,17 @@ public class JavaFXController implements Initializable {
     Button auto;
     @FXML
     Button btnTest;
+    @FXML
+    ComboBox<Course> comboBox;
 
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
-
         Parent root = FXMLLoader.load(Main.class.getResource("courseCodes.fxml"));
         Stage window = (Stage) this.upload.getScene().getWindow();
         window.setScene(new Scene(root));
         window.show();
-
+//        InputStream stream = new FileInputStream("src\\main\\files\\neumont.png");
+//        Image image = new Image(stream);
+//        img.setImage(image);
     }
 
     public void handleBtnHome(ActionEvent actionEvent) throws IOException {
@@ -111,6 +120,10 @@ public class JavaFXController implements Initializable {
     public void onClickRunSetTextTest(ActionEvent actionEvent){
 //        selectedClass.setText("Hello");
 //        classList.setText("Hello");
+        ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses("src/main/files/test.pdf")));
+        if (comboBox.getItems().isEmpty()) {
+            comboBox.getItems().addAll(classes);
+        }
         selectedClass.setText(Program.printCourseList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses("src/main/files/test.pdf"))));
     }
 
@@ -145,9 +158,8 @@ public class JavaFXController implements Initializable {
     public void handleSubmitButton(ActionEvent event){
         //Get inputCourse
         //run courseListCreator for the needed course
-
-
-
+        String test = comboBox.getItems().toString();
+        System.out.println(test);
     }
 
 
