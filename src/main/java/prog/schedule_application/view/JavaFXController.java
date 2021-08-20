@@ -51,6 +51,7 @@ public class JavaFXController implements Initializable {
             Program.setPathName(filePath.getText());
         }
         System.out.println(Program.getPathName());
+        Program.setCourseList(Program.buildCourses(Program.getPathName()));
         Stage window = (Stage) this.submitToHome.getScene().getWindow();
         window.setScene(new Scene(root));
         window.show();
