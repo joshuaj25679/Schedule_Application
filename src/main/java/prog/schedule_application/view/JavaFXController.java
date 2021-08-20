@@ -160,7 +160,7 @@ public class JavaFXController implements Initializable {
     //Schedule Creator Screen
     public void onClickAddCourses(ActionEvent actionEvent){
         if (comboBox.getItems().isEmpty()){
-            ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses("src/main/files/test.pdf")));
+            ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses(Program.getPathName())));
             comboBox.getItems().addAll(classes);
         }
     }

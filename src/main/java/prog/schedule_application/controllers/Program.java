@@ -103,7 +103,7 @@ public class Program {
                 String roomNumber = m.group(12);
                 Boolean isRequired = true;
                 counter += 1;
-                Course course = new Course(startTime, endTime, eventName, days, sectionCode, courseCode, roomNumber, isRequired);
+                Course course = new Course(startTime, endTime, eventName, days, sectionCode, courseCode, roomNumber);
                 courseList.add(course);
             }
         }

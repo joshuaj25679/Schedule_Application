@@ -10,12 +10,11 @@ public class Course extends Event{
     private String roomNumber;
     private boolean isRequired;
 
-    public Course(LocalTime startTime,LocalTime endTime, String eventName, String days, String sectionCode, String courseCode, String roomNumber, boolean isRequired) {
+    public Course(LocalTime startTime,LocalTime endTime, String eventName, String days, String sectionCode, String courseCode, String roomNumber) {
         super(startTime, endTime, eventName, days);
         setSectionCode(sectionCode);
         setCourseCode(courseCode);
         setRoomNumber(roomNumber);
-        setRequired(isRequired);
     }
 
     public String getSectionCode() {
@@ -48,14 +47,6 @@ public class Course extends Event{
         this.courseCode = super.dataChecker("([A-Z]{3}[0-9]{3})", courseCode);
     }
 
-    public boolean isRequired() {
-        return isRequired;
-    }
-
-    public void setRequired(boolean required) {
-        isRequired = required;
-    }
-
     @Override
     public String toString(){
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("hh:mm a");
@@ -65,8 +56,15 @@ public class Course extends Event{
         sb.append("Section: " + getSectionCode() + "\n");
         sb.append("Name: " + getEventName() + "\n");
         sb.append("Time: " + getStartTime().format(dtf) + "-" + getEndTime().format(dtf) + "\n");
-        sb.append("DaysOfTheWeek: " + getDays() + "\n");
-        sb.append("ClassRoom: " + getRoomNumber() + "\n");
+        sb.append("Days Taught: " + getDays() + "\n");
+        sb.append("Class Room: " + getRoomNumber() + "\n");
+        return sb.toString();
+    }
+
+    public String toStringSpecified(){
+        StringBuilder sb = new StringBuilder();
+        sb.append("Code: " + getCourseCode() + "\n");
+        sb.append("Section: " + getSectionCode() + "\n");
         return sb.toString();
     }
 
