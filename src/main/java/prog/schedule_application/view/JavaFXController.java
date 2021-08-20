@@ -72,12 +72,12 @@ public class JavaFXController implements Initializable {
     ImageView img;
 
     //ADD COURSE ITEMS
-    @FXML
-    TextArea selectedClass;
+//    @FXML
+//    TextArea selectedClass;
     @FXML
     TextArea classList;
     @FXML
-    Button auto;
+    Button classSelection;
     @FXML
     Button btnTest;
     @FXML
@@ -108,8 +108,9 @@ public class JavaFXController implements Initializable {
             Stage window = (Stage) this.home.getScene().getWindow();
             window.setScene(new Scene(root, 800, 600));
             window.show();
-            Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes", "The Courses you selected will be shown on the left side. " +
-                    "Make selections for times and your selection will be added to the other side. Once done click submit to finalize changes. Select the button called Classes to begin.");
+            Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes", "Select the button called Classes to begin." +
+                    " Once button is pressed your desired classes will appear in the drop down menu and then you will be able to make your selections of the available times and sections. Select the class and press the add button " +
+                    "and class(s) will appear in the middle of the screen.");
         }
 
     }
