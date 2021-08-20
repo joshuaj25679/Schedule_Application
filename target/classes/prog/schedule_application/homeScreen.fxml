@@ -17,9 +17,10 @@
                 <Button fx:id="log" mnemonicParsing="false" onAction="#handleCloseButtonAction" style="-fx-background-color: #434142;" text="LOG OUT" textFill="#fad000" />
               </items>
             </ToolBar>
-            <ToolBar layoutX="318.0" layoutY="21.0" prefHeight="40.0" prefWidth="163.0" style="-fx-background-color: #434142;">
+            <ToolBar layoutX="305.0" layoutY="22.0" prefHeight="40.0" prefWidth="189.0" style="-fx-background-color: #434142;">
                <items>
-                  <Button fx:id="upload" mnemonicParsing="false" onAction="#handleBtnUpload" prefHeight="27.0" prefWidth="150.0" style="-fx-background-color: #434142; -fx-border-color: #fad000;" text="ADD CLASSES" textFill="#fad000" />
+                  <Button fx:id="upload" mnemonicParsing="false" onAction="#handleBtnUpload" prefHeight="27.0" prefWidth="94.0" style="-fx-background-color: #434142; -fx-border-color: #fad000;" text="ADD CLASSES" textFill="#fad000" />
+                  <Button fx:id="btnFile" mnemonicParsing="false" onAction="#handleBtnFileUpload" style="-fx-background-color: #434142; -fx-border-color: #fad000;" text="File Upload" textFill="#fad000" />
                </items>
             </ToolBar>
             <TextArea editable="false" layoutX="60.0" layoutY="150.0" prefHeight="319.0" prefWidth="272.0" />

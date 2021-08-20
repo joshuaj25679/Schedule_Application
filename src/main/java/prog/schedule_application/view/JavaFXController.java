@@ -44,6 +44,8 @@ public class JavaFXController implements Initializable {
     Button submitToHome;
     @FXML
     TextArea filePath;
+    @FXML
+    Button btnFile;
 
     public void handleBtnSubmitHome(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
@@ -73,14 +75,14 @@ public class JavaFXController implements Initializable {
     ImageView img;
 
     //ADD COURSE ITEMS
-    @FXML
-    TextArea selectedClass;
+//    @FXML
+//    TextArea selectedClass;
     @FXML
     TextArea classList;
     @FXML
-    Button auto;
+    Button btnAddCourse;
     @FXML
-    Button btnTest;
+    Button btnClasses;
     @FXML
     ComboBox<Course> comboBox;
 
@@ -100,6 +102,14 @@ public class JavaFXController implements Initializable {
         window.show();
     }
 
+    public void handleBtnFileUpload(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource("fileExplorer.fxml"));
+        Stage window = (Stage) this.upload.getScene().getWindow();
+        window.setScene(new Scene(root));
+        window.show();
+
+    }
+
     public void handleBtnSubmitCodes(ActionEvent actionEvent) throws IOException {
         Window owner = home.getScene().getWindow();
         Alert a = new Alert(Alert.AlertType.CONFIRMATION, "Continue?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
@@ -109,13 +119,14 @@ public class JavaFXController implements Initializable {
             Stage window = (Stage) this.home.getScene().getWindow();
             window.setScene(new Scene(root, 800, 600));
             window.show();
-            Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes", "The Courses you selected will be shown on the left side. " +
-                    "Make selections for times and your selection will be added to the other side. Once done click submit to finalize changes. Select the button called Classes to begin.");
+            Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes", "Select the button called Classes to begin. " +
+                    "The Drop down menu will contain the classes with different times and sections. Once you have selected you class click add class and once done press submit to finish.");
         }
+
 
     }
 
-    public void onClickRunSetTextTest(ActionEvent actionEvent){
+    public void onClickAddCourses(ActionEvent actionEvent){
 //        selectedClass.setText("Hello");
 //        classList.setText("Hello");
         if (comboBox.getItems().isEmpty()){
