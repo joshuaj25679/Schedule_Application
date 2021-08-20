@@ -1,5 +1,7 @@
 package prog.schedule_application.view;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,6 +18,8 @@ import javafx.stage.WindowEvent;
 import prog.schedule_application.Main;
 import prog.schedule_application.controllers.Program;
 import javafx.stage.FileChooser;
+import prog.schedule_application.models.Course;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -76,6 +80,8 @@ public class JavaFXController implements Initializable {
     Button auto;
     @FXML
     Button btnTest;
+    @FXML
+    ComboBox<Course> comboBox;
 
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
 
@@ -111,7 +117,11 @@ public class JavaFXController implements Initializable {
     public void onClickRunSetTextTest(ActionEvent actionEvent){
 //        selectedClass.setText("Hello");
 //        classList.setText("Hello");
-        selectedClass.setText(Program.printCourseList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses("src/main/files/test.pdf"))));
+        if (comboBox.getItems().isEmpty()){
+            ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses("src/main/files/test.pdf")));
+            comboBox.getItems().addAll(classes);
+        }
+//        selectedClass.setText(Program.printCourseList());
     }
 
     public void handleBtnAddCodes(ActionEvent actionEvent){
