@@ -41,8 +41,6 @@ public class JavaFXController implements Initializable {
     @FXML
     Button browse;
     @FXML
-    public ListView listview;
-    @FXML
     Button submitToHome;
     @FXML
     TextArea filePath;
@@ -123,7 +121,7 @@ public class JavaFXController implements Initializable {
 
     }
 
-    public void onClickRunSetTextTest(ActionEvent actionEvent){
+    public void onClickSetCourses(ActionEvent actionEvent){
 //        selectedClass.setText("Hello");
 //        classList.setText("Hello");
         if (comboBox.getItems().isEmpty()){
@@ -131,6 +129,11 @@ public class JavaFXController implements Initializable {
             comboBox.getItems().addAll(classes);
         }
 //        selectedClass.setText(Program.printCourseList());
+    }
+
+    public void onClickSelectCourse(ActionEvent actionEvent){
+        //Sets selected course from combobox into classeslist
+        classList.setText("Test");
     }
 
     public void handleBtnAddCodes(ActionEvent actionEvent){
