@@ -104,9 +104,6 @@ public class Program {
                 Boolean isRequired = true;
                 counter += 1;
                 Course course = new Course(startTime, endTime, eventName, days, sectionCode, courseCode, roomNumber, isRequired);
-                if (courseList.contains(course)){
-                    continue;
-                }
                 courseList.add(course);
             }
         }
