@@ -45,19 +45,6 @@ public class JavaFXController implements Initializable {
     @FXML
     TextArea filePath;
 
-    public void handleBtnSubmitHome(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
-        if(filePath.getText().contains(".pdf")){
-            Program.setPathName(filePath.getText());
-        }
-        System.out.println(Program.getPathName());
-        Program.setCourseList(Program.buildCourses(Program.getPathName()));
-        Stage window = (Stage) this.submitToHome.getScene().getWindow();
-        window.setScene(new Scene(root));
-        window.show();
-    }
-
-
     //COURSE CODE ITEMS
     @FXML
     TextField txtcode;
@@ -84,6 +71,47 @@ public class JavaFXController implements Initializable {
     @FXML
     ComboBox<Course> comboBox;
 
+    //File Submit Screen
+    public void handleFEButton(ActionEvent event) {
+
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
+        File selectedFile = fileChooser.showOpenDialog(null);
+        //filePath.setText((filePath.getText()));
+        if (selectedFile != null) {
+            filePath.setText((selectedFile.getAbsolutePath()));
+        }else {
+            System.out.println("File is not valid!");
+        }
+
+    }
+
+    public void handleBtnSubmitHome(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
+        if(filePath.getText().contains(".pdf")){
+            Program.setPathName(filePath.getText());
+        }
+        System.out.println(Program.getPathName());
+        Program.setCourseList(Program.buildCourses(Program.getPathName()));
+        Stage window = (Stage) this.submitToHome.getScene().getWindow();
+        window.setScene(new Scene(root));
+        window.show();
+    }
+
+
+    //Home Screen
+    public void handleBtnHome(ActionEvent actionEvent) throws IOException {
+        Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
+        Stage window = (Stage) this.home.getScene().getWindow();
+        window.setScene(new Scene(root));
+        window.show();
+    }
+
+    public void handleCloseButtonAction(ActionEvent event) {
+        Stage stage = (Stage) log.getScene().getWindow();
+        stage.close();
+    }
+
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
 
         Parent root = FXMLLoader.load(Main.class.getResource("courseCodes.fxml"));
@@ -93,12 +121,7 @@ public class JavaFXController implements Initializable {
 
     }
 
-    public void handleBtnHome(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
-        Stage window = (Stage) this.home.getScene().getWindow();
-        window.setScene(new Scene(root));
-        window.show();
-    }
+    //User input Courses Screen
 
     public void handleBtnSubmitCodes(ActionEvent actionEvent) throws IOException {
         Window owner = home.getScene().getWindow();
@@ -115,7 +138,16 @@ public class JavaFXController implements Initializable {
 
     }
 
-    public void onClickRunSetTextTest(ActionEvent actionEvent){
+    public void handleBtnAddCodes(ActionEvent actionEvent){
+        String code = txtcode.getText();
+        txtcode.clear();
+        Program.addToInputCourses(code);
+        txtcoursearea.setText(Program.getInputCourses().toString());
+    }
+
+    //Schedule Builder Screen
+
+    public void handleShowSelectedClasses(ActionEvent actionEvent){
 //        selectedClass.setText("Hello");
 //        classList.setText("Hello");
         if (comboBox.getItems().isEmpty()){
@@ -124,34 +156,6 @@ public class JavaFXController implements Initializable {
         }
 //        selectedClass.setText(Program.printCourseList());
     }
-
-    public void handleBtnAddCodes(ActionEvent actionEvent){
-        String code = txtcode.getText();
-        txtcode.clear();
-        Program.addToInputCourses(code);
-        txtcoursearea.setText(Program.getInputCourses().toString());
-    }
-
-    public void handleCloseButtonAction(ActionEvent event) {
-        Stage stage = (Stage) log.getScene().getWindow();
-        stage.close();
-    }
-
-    public void handleFEButton(ActionEvent event) {
-
-        FileChooser fileChooser = new FileChooser();
-        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
-       File selectedFile = fileChooser.showOpenDialog(null);
-        //filePath.setText((filePath.getText()));
-        if (selectedFile != null) {
-            filePath.setText((selectedFile.getAbsolutePath()));
-        }else {
-            System.out.println("File is not valid!");
-        }
-
-    }
-
-
 
     public void handleSubmitButton(ActionEvent event){
         //Get inputCourse
