@@ -141,6 +141,7 @@ public class Program {
     }
 
     public static void setCourseList(ArrayList<Course> courseList) {
+        courseList.clear();
         Program.courseList = courseList;
     }
 
