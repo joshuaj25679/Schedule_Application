@@ -10,16 +10,16 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #434142;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.schedule_application.view.JavaFXController">
    <children>
-      <TextArea fx:id="filePath" layoutX="310.0" layoutY="263.0" prefHeight="38.0" prefWidth="181.0" promptText="INSERT FILE PATH" style="-fx-border-color: #222222;" />
-      <Button fx:id="browse" layoutX="503.0" layoutY="270.0" mnemonicParsing="false" onAction="#handleFEButton" style="-fx-background-color: #222222;" text="BROWSE" textFill="#ffdd00" />
-      <Button fx:id="submitToHome" layoutX="372.0" layoutY="332.0" mnemonicParsing="false" onAction="#handleBtnSubmitHome" style="-fx-background-color: #222222;" text="SUBMIT" textFill="#ffdd00" />
+      <TextArea fx:id="filePath" layoutX="310.0" layoutY="316.0" prefHeight="38.0" prefWidth="181.0" promptText="INSERT FILE PATH" style="-fx-border-color: #222222;" />
+      <Button fx:id="browse" layoutX="516.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleFEButton" style="-fx-background-color: #222222; -fx-border-color: #ffdd00;" text="BROWSE" textFill="#ffdd00" />
+      <Button fx:id="submitToHome" layoutX="372.0" layoutY="382.0" mnemonicParsing="false" onAction="#handleBtnSubmitHome" style="-fx-background-color: #222222; -fx-border-color: ffdd00;" text="SUBMIT" textFill="#ffdd00" />
       <Label fx:id="lblStatus" layoutX="135.0" layoutY="95.0" prefHeight="51.0" prefWidth="531.0" textFill="RED" />
-      <Label alignment="CENTER" layoutX="291.0" layoutY="176.0" prefHeight="51.0" prefWidth="220.0" style="-fx-border-color: #ffdd00;" text="Upload Course List PDF" textFill="#ffdd00">
+      <Label alignment="CENTER" layoutX="290.0" layoutY="238.0" prefHeight="51.0" prefWidth="220.0" style="-fx-border-color: #ffdd00;" text="Upload Course List PDF" textFill="#ffdd00">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <ImageView fx:id="imgFP" fitHeight="202.0" fitWidth="226.0" layoutX="65.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="imgFP" fitHeight="202.0" fitWidth="226.0" layoutX="299.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@neumont.png" />
          </image>
