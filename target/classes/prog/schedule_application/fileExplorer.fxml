@@ -19,9 +19,9 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <ImageView fx:id="img" fitHeight="202.0" fitWidth="226.0" layoutX="66.0" layoutY="162.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="img" fitHeight="202.0" fitWidth="226.0" layoutX="314.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../neumont.png" />
+            <Image url="@../../../files/neumont.png" />
          </image>
       </ImageView>
    </children>
