@@ -25,6 +25,7 @@ public class Main extends Application {
         stage.setTitle("Schedule Application");
         stage.setScene(scene);
         stage.show();
+        a.setResizable(true);
         a.show();
     }
 
