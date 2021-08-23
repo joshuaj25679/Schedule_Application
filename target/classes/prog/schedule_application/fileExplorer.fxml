@@ -21,7 +21,7 @@
       </Label>
       <ImageView fx:id="imgFP" fitHeight="202.0" fitWidth="226.0" layoutX="65.0" layoutY="194.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../files/neumont.png" />
+            <Image url="@../../neumont.png" />
          </image>
       </ImageView>
    </children>
