@@ -180,7 +180,8 @@ public class JavaFXController implements Initializable {
         Course temp = comboBox.getValue();
         Program.setUserCourses(temp);
         for (int i = 0; i < Program.getUserCourseList().size(); i++){
-            classList.appendText(Program.getUserCourseList().get(i).toString());
+                classList.appendText(Program.getUserCourseList().get(i).toString());
+                Program.getUserCourseList().remove(i);
         }
 //        System.out.println(temp);
     }
