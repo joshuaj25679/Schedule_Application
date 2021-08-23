@@ -91,7 +91,7 @@ public class JavaFXController implements Initializable {
         }else {
             lblStatus.setText("Either PDF file is not found or supported. Try again, or choose a different PDF file.");
         }
-        PDFtoTXT.test(filePath.toString());
+//        PDFtoTXT.test(filePath.toString());
     }
 
     public void handleFEButton(ActionEvent event) {
@@ -160,7 +160,7 @@ public class JavaFXController implements Initializable {
 
     //Schedule Creator Screen
     public void onClickAddCourses(ActionEvent actionEvent){
-        System.out.println(Program.getCourseList());
+//        System.out.println(Program.getCourseList());
         if (comboBox.getItems().isEmpty()){
             ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.getCourseList()));
             comboBox.getItems().addAll(classes);
@@ -172,18 +172,18 @@ public class JavaFXController implements Initializable {
             ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.getCourseList()));
             comboBox.getItems().addAll(classes);
         }
-        Course temp = comboBox.getValue();
-        System.out.println(temp);
+//        Course temp = comboBox.getValue();
+//        System.out.println(temp);
     }
 
     public void onClickSubmitCourse(ActionEvent actionEvent){
+        ArrayList<Course> tempArray = new ArrayList<>();
         Course temp = comboBox.getValue();
         Program.setUserCourses(temp);
-        for (int i = 0; i < Program.getUserCourseList().size(); i++){
-                classList.appendText(Program.getUserCourseList().get(i).toString());
-                Program.getUserCourseList().remove(i);
-        }
-//        System.out.println(temp);
+        tempArray.add(temp);
+        classList.appendText(tempArray.get(0).toString() + "\n");
+        tempArray.remove(0);
+        System.out.println(Program.getUserCourseList());
     }
 
 
