@@ -14,7 +14,7 @@
    <children>
       <ImageView fx:id="img" fitHeight="202.0" fitWidth="226.0" layoutX="314.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../neumont.png" />
+            <Image url="@../../../files/neumont.png" />
          </image>
       </ImageView>
       <Text fill="#ffdd00" layoutX="219.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter All Course Codes Below">
