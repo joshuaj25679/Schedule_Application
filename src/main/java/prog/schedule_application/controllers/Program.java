@@ -15,6 +15,7 @@ import java.util.regex.Pattern;
 public class Program {
     @FXML
     static TextArea filePath;
+    private static ArrayList<Course> userAddedCourses = new ArrayList<>();
 
 //    static String path= filePath.getText();
     private static Pattern p = null;
@@ -165,5 +166,13 @@ public class Program {
         else{
             System.out.println("Invalid Course Code Format");
         }
+    }
+
+    public static ArrayList<Course> getUserCourseList(){
+        return userAddedCourses;
+    }
+
+    public static void setUserCourses(Course e){
+        userAddedCourses.add(e);
     }
 }

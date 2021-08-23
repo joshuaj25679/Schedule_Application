@@ -25,6 +25,7 @@ import prog.schedule_application.models.Course;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class JavaFXController implements Initializable {
@@ -165,6 +166,17 @@ public class JavaFXController implements Initializable {
             ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses(Program.getPathName())));
             comboBox.getItems().addAll(classes);
         }
+        Course temp = comboBox.getValue();
+        System.out.println(temp);
+    }
+
+    public void onClickSubmitCourse(ActionEvent actionEvent){
+        Course temp = comboBox.getValue();
+        Program.setUserCourses(temp);
+        for (int i = 0; i <= Program.getUserCourseList().size(); i++){
+            classList.appendText(Program.getUserCourseList().get(i).toString());
+        }
+//        System.out.println(temp);
     }
 
 
