@@ -153,7 +153,8 @@ public class JavaFXController implements Initializable {
             window.setScene(new Scene(root, 800, 600));
             window.show();
             Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes", "Select the button called Classes to begin. " +
-                    "The Drop down menu will contain the classes with different times and sections. Once you have selected you class click add class and once done press submit to finish.");
+                    "The Drop down menu will contain the classes with different times and sections. " +
+                    "\nOnce you have selected you class click add class and once done press submit to finish.");
         }
     }
 
