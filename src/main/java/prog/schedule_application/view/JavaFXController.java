@@ -85,8 +85,6 @@ public class JavaFXController implements Initializable {
             Program.setPathName(filePath.getText());
             System.out.println(Program.getPathName());
             Program.setCourseList(Program.buildCourses(Program.getPathName()));
-            if(Program.courseList.isEmpty()){
-            }
             Stage window = (Stage) this.submitToHome.getScene().getWindow();
             window.setScene(new Scene(root));
             window.show();
@@ -162,8 +160,16 @@ public class JavaFXController implements Initializable {
 
     //Schedule Creator Screen
     public void onClickAddCourses(ActionEvent actionEvent){
+        System.out.println(Program.getCourseList());
         if (comboBox.getItems().isEmpty()){
-            ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.buildCourses(Program.getPathName())));
+            ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.getCourseList()));
+            comboBox.getItems().addAll(classes);
+        }
+    }
+
+    public void onShowTest(){
+        if (comboBox.getItems().isEmpty()){
+            ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.getCourseList()));
             comboBox.getItems().addAll(classes);
         }
         Course temp = comboBox.getValue();
@@ -173,7 +179,7 @@ public class JavaFXController implements Initializable {
     public void onClickSubmitCourse(ActionEvent actionEvent){
         Course temp = comboBox.getValue();
         Program.setUserCourses(temp);
-        for (int i = 0; i <= Program.getUserCourseList().size(); i++){
+        for (int i = 0; i < Program.getUserCourseList().size(); i++){
             classList.appendText(Program.getUserCourseList().get(i).toString());
         }
 //        System.out.println(temp);

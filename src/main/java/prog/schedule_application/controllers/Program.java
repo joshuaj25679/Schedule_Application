@@ -55,7 +55,7 @@ public class Program {
                 for (String courseCode : userClasses) {
                     //Check the course list for all the courses to be taken and add them to the list of sprint courses
                     for (Course course : courseList) {
-                        if (course.getCourseCode().equals(courseCode)) {
+                        if (course.getCourseCode().equals(courseCode) && !sprintCourses.contains(course)) {
                             sprintCourses.add(course);
                         }
                     }
@@ -142,7 +142,6 @@ public class Program {
     }
 
     public static void setCourseList(ArrayList<Course> courseList) {
-        courseList.clear();
         Program.courseList = courseList;
     }
 
