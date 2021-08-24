@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.Window;
 import javafx.stage.WindowEvent;
@@ -51,6 +52,8 @@ public class JavaFXController implements Initializable {
     Label lblStatus;
     @FXML
     Button btnFile;
+    @FXML
+    Text txtNotValid;
 
     //COURSE CODE ITEMS
     @FXML
@@ -91,7 +94,8 @@ public class JavaFXController implements Initializable {
             window.setScene(new Scene(root));
             window.show();
         }else {
-            lblStatus.setText("Either PDF file is not found or supported. Try again, or choose a different PDF file.");
+//            lblStatus.setText("Either PDF file is not found or supported. Try again, or choose a different PDF file.");
+            txtNotValid.setVisible(true);
         }
 //        PDFtoTXT.test(filePath.toString());
     }
@@ -105,6 +109,7 @@ public class JavaFXController implements Initializable {
             filePath.setText((selectedFile.getAbsolutePath()));
         }else {
             System.out.println("File is not valid!");
+
         }
 
     }
