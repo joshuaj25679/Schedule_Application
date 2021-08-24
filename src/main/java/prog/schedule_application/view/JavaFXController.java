@@ -77,6 +77,8 @@ public class JavaFXController implements Initializable {
     Button btnClasses;
     @FXML
     ComboBox<Course> comboBox;
+    @FXML
+    Button btnClear;
 
     //File Explorer Screen
     public void handleBtnSubmitHome(ActionEvent actionEvent) throws IOException {
@@ -143,7 +145,7 @@ public class JavaFXController implements Initializable {
     }
 
     public void handleBtnSubmitCodes(ActionEvent actionEvent) throws IOException {
-        Window owner = home.getScene().getWindow();
+//        Window owner = home.getScene().getWindow();
         Alert a = new Alert(Alert.AlertType.CONFIRMATION, "Continue?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
         a.showAndWait();
         if (a.getResult() == ButtonType.YES){
@@ -184,6 +186,11 @@ public class JavaFXController implements Initializable {
         classList.appendText(tempArray.get(0).toString() + "\n");
         tempArray.remove(0);
         System.out.println(Program.getUserCourseList());
+    }
+
+    public void onClickClearCourses(ActionEvent actionEvent){
+        classList.clear();
+        Program.getUserCourseList().clear();
     }
 
 
