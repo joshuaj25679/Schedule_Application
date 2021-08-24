@@ -78,15 +78,27 @@ public class Program {
         //Use the switch to separate the Sprint Classes
         switch(sprintIndicator){
             case 1:
-                for(int i = 0; i < userCourses.size(); i++){
-                    if(userCourses.get(i).getSectionCode().contains("" + sprintIndicator)
-                            || !userCourses.get(i).getSectionCode().contains("" + sprintIndicator)){
-                        scheduleOutprint.append(userCourses.get(i));
+                for(Course course : userCourses){
+                    if(course.getSectionCode().contains("" + sprintIndicator)
+                            || !course.getSectionCode().contains("2")){
+                        scheduleOutprint.append(course);
                     }
                     else{
-                        System.out.println(userCourses.get(i));
+                        System.out.println(course);
                     }
                 }
+                break;
+            case 2:
+                for(Course course : userCourses){
+                    if(course.getSectionCode().contains("" + sprintIndicator)
+                            || !course.getSectionCode().contains("1")){
+                        scheduleOutprint.append(course);
+                    }
+                    else{
+                        //System.out.println(course);
+                    }
+                }
+                break;
         }
 
 

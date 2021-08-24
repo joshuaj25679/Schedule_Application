@@ -206,7 +206,7 @@ public class JavaFXController implements Initializable {
         tempArray.add(temp);
         classList.appendText(tempArray.get(0).toString() + "\n");
         tempArray.remove(0);
-        System.out.println(Program.getUserCourseList());
+        //System.out.println(Program.getUserCourseList());
     }
 
     public void onClickClearCourses(ActionEvent actionEvent){
