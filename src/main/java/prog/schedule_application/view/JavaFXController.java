@@ -116,10 +116,16 @@ public class JavaFXController implements Initializable {
 
     //Home Screen
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("courseCodes.fxml"));
-        Stage window = (Stage) this.upload.getScene().getWindow();
-        window.setScene(new Scene(root));
-        window.show();
+        if (!Program.getCourseList().isEmpty()){
+            Parent root = FXMLLoader.load(Main.class.getResource("courseCodes.fxml"));
+            Stage window = (Stage) this.upload.getScene().getWindow();
+            window.setScene(new Scene(root));
+            window.show();
+        } else {
+            Alert a = new Alert(Alert.AlertType.ERROR, "PDF IS INVALID DOESN'T CONTAIN COURSES!");
+            a.show();
+        }
+
     }
 
     public void handleBtnFileUpload(ActionEvent actionEvent) throws IOException {
