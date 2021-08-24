@@ -223,7 +223,6 @@ public class JavaFXController implements Initializable {
             window.setScene(new Scene(root));
             window.show();
         }
-
     }
 
 
