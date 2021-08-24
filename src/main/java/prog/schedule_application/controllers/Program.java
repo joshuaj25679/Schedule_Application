@@ -9,8 +9,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class Program {
     @FXML
@@ -19,7 +21,9 @@ public class Program {
 
 //    static String path= filePath.getText();
     private static Pattern p = null;
+    private static Pattern p2 = null;
     private static Matcher m = null;
+    private static Matcher m2 = null;
     private static ArrayList<String> inputCourses = new ArrayList<>();
     public static ArrayList<Course> courseList = new ArrayList<>();
     private static String pathName = String.valueOf(filePath);
@@ -82,8 +86,10 @@ public class Program {
         //System.out.println(schedule);
 
     public static ArrayList<Course> buildCourses(String path) {
+        ArrayList<Course> courses = new ArrayList<>();
         int counter = 0;
         String regex = "^([A-Z]{3}[0-9]{3})[ ]([A-Z0-9]{0,2}[ ])?([A-z\\s\\:\\-]{1,})[ ]([0-9]{1})[ ]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[-]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[ ]([MTWHF]{1,5})[ ]([0-9]{3})";
+        String sprintRegex = "^(Sprint 2)";
         PDFtoTXT.test(path);
         for (String a : PDFtoTXT.pdfStrings) {
             p = Pattern.compile(regex);
@@ -119,14 +125,6 @@ public class Program {
             outPrint.append("\n");
         }
         return outPrint.toString();
-    }
-
-    public static ArrayList<String> printSelectedCourseList(ArrayList<Course> courseList){
-        ArrayList<String> courseInfoToDisplay = new ArrayList<>();
-        for(Course courses : courseList){
-            courseInfoToDisplay.add(courses.getCourseCode() + " " + courses.getSectionCode());
-        }
-        return  courseInfoToDisplay;
     }
 
     public static String getPathName() {

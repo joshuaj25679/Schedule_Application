@@ -8,6 +8,7 @@ import javafx.scene.control.TextArea;
 import javafx.stage.Stage;
 import javafx.fxml.FXML;
 import org.controlsfx.control.spreadsheet.Grid;
+import prog.schedule_application.controllers.PDFtoTXT;
 import prog.schedule_application.controllers.Program;
 import prog.schedule_application.models.Course;
 import java.io.IOException;
