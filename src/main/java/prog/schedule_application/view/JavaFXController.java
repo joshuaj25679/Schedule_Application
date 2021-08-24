@@ -123,6 +123,7 @@ public class JavaFXController implements Initializable {
 
     //Home Screen
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
+        Program.getInputCourses().clear();
         if (!Program.getCourseList().isEmpty()){
             Parent root = FXMLLoader.load(Main.class.getResource("courseCodes.fxml"));
             Stage window = (Stage) this.upload.getScene().getWindow();
