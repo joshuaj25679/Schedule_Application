@@ -23,8 +23,8 @@
                   <Button fx:id="btnFile" mnemonicParsing="false" onAction="#handleBtnFileUpload" style="-fx-background-color: #434142; -fx-border-color: #fad000;" text="File Upload" textFill="#fad000" />
                </items>
             </ToolBar>
-            <TextArea editable="false" layoutX="60.0" layoutY="150.0" prefHeight="319.0" prefWidth="272.0" />
-            <TextArea editable="false" layoutX="462.0" layoutY="150.0" prefHeight="319.0" prefWidth="272.0" style="-fx-background-color: lightgrey;" />
+            <TextArea fx:id="txtSprintOne" editable="false" layoutX="60.0" layoutY="150.0" prefHeight="319.0" prefWidth="272.0" />
+            <TextArea fx:id="txtSprintTwo" editable="false" layoutX="462.0" layoutY="150.0" prefHeight="319.0" prefWidth="272.0" style="-fx-background-color: lightgrey;" />
             <Label layoutX="153.0" layoutY="101.0" text="Sprint 1" textFill="#fad000">
                <font>
                   <Font size="25.0" />
@@ -35,6 +35,7 @@
                   <Font size="25.0" />
                </font>
             </Label>
+            <Button fx:id="btnDisplaySchedule" layoutX="351.0" layoutY="274.0" mnemonicParsing="false" onAction="#onClickDisplayUserSchedule" style="-fx-background-color: #434142; -fx-border-color: #fad000;" text="Show Schedule" textFill="#fad000" />
          </children>
       </AnchorPane>
   </content>

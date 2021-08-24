@@ -18,14 +18,13 @@ public class Program {
     @FXML
     static TextArea filePath;
     private static ArrayList<Course> userAddedCourses = new ArrayList<>();
-
-//    static String path= filePath.getText();
     private static Pattern p = null;
     private static Pattern p2 = null;
     private static Matcher m = null;
     private static Matcher m2 = null;
     private static ArrayList<String> inputCourses = new ArrayList<>();
-    public static ArrayList<Course> courseList = new ArrayList<>();
+    private static ArrayList<Course> courseList = new ArrayList<>();
+    private static ArrayList<Course> userSchedule = new ArrayList<>();
     private static String pathName = String.valueOf(filePath);
 
     public static ArrayList<Course> courseListCreator(int sprintTime, ArrayList<String> userClasses, ArrayList<Course> courseList) {
@@ -68,22 +67,32 @@ public class Program {
         }
         return sprintCourses;
     }
-        //Compare times and build schedule
-        /*schedule.add(sprintOneCourses.get(0));
-        int counter = 1;
-            for(Course courses : sprintOneCourses){
-                //Comparisons
-                if(!schedule.get(counter - 1).getCourseCode().equals(courses.getCourseCode()) && courses.getStartTime().isAfter(schedule.get(counter-1).getEndTime())){
-                    schedule.add(courses);
-                    System.out.println(courses.getCourseCode() + " Added");
-                    counter++;
-                }
-                else{
-                    System.out.println(courses.getCourseCode() + "NOT ADDED DIMWIT");
-                }
 
-            }*/
-        //System.out.println(schedule);
+    public static String buildSchedule(int sprintIndicator, ArrayList<Course> userCourses){
+        StringBuilder scheduleOutprint = new StringBuilder();
+        if(!userCourses.isEmpty()){
+            //Use Lambda to organize by time
+            userCourses.sort((o1, o2) -> o1.getEndTime().compareTo(o2.getStartTime()));
+            //System.out.println(userCourses);
+        }
+        //Use the switch to separate the Sprint Classes
+        switch(sprintIndicator){
+            case 1:
+                for(int i = 0; i < userCourses.size(); i++){
+                    if(userCourses.get(i).getSectionCode().contains("" + sprintIndicator)
+                            || !userCourses.get(i).getSectionCode().contains("" + sprintIndicator)){
+                        scheduleOutprint.append(userCourses.get(i));
+                    }
+                    else{
+                        System.out.println(userCourses.get(i));
+                    }
+                }
+        }
+
+
+        System.out.println(scheduleOutprint);
+        return scheduleOutprint.toString();
+    }
 
     public static ArrayList<Course> buildCourses(String path) {
         ArrayList<Course> courses = new ArrayList<>();
@@ -171,5 +180,13 @@ public class Program {
 
     public static void setUserCourses(Course e){
         userAddedCourses.add(e);
+    }
+
+    public static ArrayList<Course> getUserSchedule() {
+        return userSchedule;
+    }
+
+    public static void setUserSchedule(ArrayList<Course> userSchedule) {
+        Program.userSchedule = userSchedule;
     }
 }

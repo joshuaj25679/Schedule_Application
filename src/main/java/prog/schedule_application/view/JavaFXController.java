@@ -55,6 +55,12 @@ public class JavaFXController implements Initializable {
     Button btnFile;
     @FXML
     Text txtNotValid;
+    @FXML
+    Button btnDisplaySchedule;
+    @FXML
+    TextArea txtSprintOne;
+    @FXML
+    TextArea txtSprintTwo;
 
     //COURSE CODE ITEMS
     @FXML
@@ -141,6 +147,11 @@ public class JavaFXController implements Initializable {
         stage.close();
     }
 
+    public void onClickDisplayUserSchedule(ActionEvent event) {
+        txtSprintOne.setText(Program.buildSchedule(1, Program.getUserCourseList()));
+        txtSprintTwo.setText(Program.buildSchedule(2, Program.getUserCourseList()));
+    }
+
     //User Input Screen
     public void handleBtnHome(ActionEvent actionEvent) throws IOException {
         Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
@@ -182,12 +193,10 @@ public class JavaFXController implements Initializable {
     }
 
     public void onShowTest(){
-        if (comboBox.getItems().isEmpty()){
+        if (comboBox.getItems().isEmpty()) {
             ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.getCourseList()));
             comboBox.getItems().addAll(classes);
         }
-//        Course temp = comboBox.getValue();
-//        System.out.println(temp);
     }
 
     public void onClickSubmitCourse(ActionEvent actionEvent){

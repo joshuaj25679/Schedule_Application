@@ -15,7 +15,7 @@
             <Button fx:id="home" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#handleBtnHome" style="-fx-background-color: #222222; -fx-border-color: #fad000;" text="HOME" textFill="#fad000" />
             <Button fx:id="btnAddCourse" layoutX="625.0" layoutY="344.0" mnemonicParsing="false" onAction="#onClickSubmitCourse" style="-fx-background-color: #222222; -fx-border-color: #fad000;" text="Add Classes" textFill="#fad000" />
             <Button fx:id="btnClasses" layoutX="372.0" layoutY="74.0" mnemonicParsing="false" onAction="#onClickAddCourses" style="-fx-background-color: #222222; -fx-border-color: #fad000;" text="Classes" textFill="#fad000" visible="false" />
-            <ComboBox fx:id="comboBox" layoutX="581.0" layoutY="181.0" onShown="#onShowTest" prefHeight="144.0" prefWidth="182.0" promptText="Class Selection" />
+            <ComboBox fx:id="comboBox" layoutX="581.0" layoutY="181.0" onShown="#onShowTest" prefHeight="144.0" prefWidth="182.0" promptText="Class Selection" visibleRowCount="50" />
             <Button fx:id="btnClear" layoutX="374.0" layoutY="74.0" mnemonicParsing="false" onAction="#onClickClearCourses" style="-fx-background-color: #222222; -fx-border-color: #fad000;" text="CLEAR" textFill="#fad000" />
          </children>
       </Pane>
