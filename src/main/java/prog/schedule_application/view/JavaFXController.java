@@ -214,6 +214,18 @@ public class JavaFXController implements Initializable {
         Program.getUserCourseList().clear();
     }
 
+    public void onClickSubmit(ActionEvent actionEvent) throws IOException{
+        Alert a = new Alert(Alert.AlertType.CONFIRMATION, "Continue?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
+        a.showAndWait();
+        if (a.getResult() == ButtonType.YES){
+            Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
+            Stage window = (Stage) this.submit.getScene().getWindow();
+            window.setScene(new Scene(root));
+            window.show();
+        }
+
+    }
+
 
 
     @Override
