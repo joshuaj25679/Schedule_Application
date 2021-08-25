@@ -109,7 +109,7 @@ public class Program {
     public static ArrayList<Course> buildCourses(String path) {
         ArrayList<Course> courses = new ArrayList<>();
         int counter = 0;
-        String regex = "^([A-Z]{3}[0-9]{3})[ ]([A-Z0-9]{0,2}[ ])?([A-z0-9\\s\\:\\-]{1,})[ ]([0-9]{1})[ ]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[-]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[ ]([MTWHF]{1,5})[ ]([0-9]{3})";
+        String regex = "^([A-Z]{3}[0-9]{3})[ ]([A-Z0-9]{0,2}[ ])?([A-z\\s\\:\\-]{1,})[ ]([0-9]{1})[ ]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[-]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[ ]([MTWHF]{1,5})[ ]([0-9]{3})";
         String sprintRegex = "^(Sprint 2)";
         PDFtoTXT.test(path);
         for (String a : PDFtoTXT.pdfStrings) {
@@ -132,10 +132,25 @@ public class Program {
                 Boolean isRequired = true;
                 counter += 1;
                 Course course = new Course(startTime, endTime, eventName, days, sectionCode, courseCode, roomNumber);
-                courseList.add(course);
+                if(isInList(course, courseList)==false){
+                    courseList.add(course);
+                }
             }
         }
         return courseList;
+    }
+    public static boolean isInList(Course course, ArrayList<Course> courses){
+        boolean check = false;
+        for(Course a : courses){
+            if(course.getCourseCode().equals(a.getCourseCode())
+            && course.getSectionCode().equals(a.getSectionCode())
+            && course.getRoomNumber().equals(a.getRoomNumber())
+            && course.getEventName().equals(a.getEventName())
+            && course.getDays().equals(a.getDays())){
+                check = true;
+            }
+        }
+        return check;
     }
 
     public static String printCourseList(ArrayList<Course> courseList){
