@@ -124,6 +124,7 @@ public class JavaFXController implements Initializable {
     //Home Screen
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
         Program.getInputCourses().clear();
+        btnDisplaySchedule.setVisible(true);
         if (!Program.getCourseList().isEmpty()){
             Parent root = FXMLLoader.load(Main.class.getResource("courseCodes.fxml"));
             Stage window = (Stage) this.upload.getScene().getWindow();
@@ -151,6 +152,7 @@ public class JavaFXController implements Initializable {
     public void onClickDisplayUserSchedule(ActionEvent event) {
         txtSprintOne.setText(Program.buildSchedule(1, Program.getUserCourseList()));
         txtSprintTwo.setText(Program.buildSchedule(2, Program.getUserCourseList()));
+        btnDisplaySchedule.setVisible(false);
     }
 
     //User Input Screen
@@ -164,8 +166,14 @@ public class JavaFXController implements Initializable {
     public void handleBtnAddCodes(ActionEvent actionEvent){
         String code = txtcode.getText();
         txtcode.clear();
-        Program.addToInputCourses(code);
-        txtcoursearea.setText(Program.getInputCourses().toString());
+        boolean valid = Program.addToInputCourses(code);
+        if (valid){
+            txtcoursearea.setText(Program.getInputCourses().toString());
+        } else {
+            Alert a = new Alert(Alert.AlertType.ERROR, "NOT A VALID COURSE CODE! PLEASE TRY AGAIN.");
+            a.show();
+        }
+
     }
 
     public void handleBtnSubmitCodes(ActionEvent actionEvent) throws IOException {
@@ -198,6 +206,7 @@ public class JavaFXController implements Initializable {
             ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.getCourseList()));
             comboBox.getItems().addAll(classes);
         }
+//        comboBox
     }
 
     public void onClickSubmitCourse(ActionEvent actionEvent){

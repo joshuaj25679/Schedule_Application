@@ -172,7 +172,7 @@ public class Program {
         Program.inputCourses = inputCourses;
     }
 
-    public static void addToInputCourses(String courseToAdd){
+    public static boolean addToInputCourses(String courseToAdd){
         String formattedInput = courseToAdd.toUpperCase();
         formattedInput = formattedInput.replaceAll(" ", "");
         String regex = "([A-Z]{3}[0-9]{3})";
@@ -180,9 +180,10 @@ public class Program {
         m = p.matcher(formattedInput);
         if(m.find()){
             getInputCourses().add(formattedInput);
+            return true;
         }
         else{
-            System.out.println("Invalid Course Code Format");
+            return false;
         }
     }
 
