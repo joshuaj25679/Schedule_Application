@@ -22,7 +22,7 @@
             <Font size="28.0" />
          </font>
       </Text>
-      <TextField fx:id="txtcode" alignment="CENTER" layoutX="341.0" layoutY="300.0" promptText="Enter Class Code" />
+      <TextField fx:id="txtcode" alignment="CENTER" layoutX="341.0" layoutY="300.0" onAction="#handleBtnAddCodesEnter" promptText="Enter Class Code" />
       <Button fx:id="btncodeadd" layoutX="509.0" layoutY="300.0" mnemonicParsing="false" onAction="#handleBtnAddCodes" style="-fx-background-color: #222222;" text="ADD" textFill="#ffdd00" />
       <TextArea fx:id="txtcoursearea" layoutX="315.0" layoutY="427.0" prefHeight="90.0" prefWidth="200.0" />
       <ScrollBar fx:id="scbar" layoutX="515.0" layoutY="427.0" orientation="VERTICAL" prefHeight="90.0" prefWidth="14.0" />

@@ -3,6 +3,7 @@ package prog.schedule_application.view;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -11,6 +12,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -109,12 +112,12 @@ public class JavaFXController implements Initializable {
     }
 
     public void handleFEButton(ActionEvent event) {
-
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PDF Files", "*.pdf"));
         File selectedFile = fileChooser.showOpenDialog(null);
         if (selectedFile != null) {
             filePath.setText((selectedFile.getAbsolutePath()));
+
         }else {
             //System.out.println("File is not valid!");
 
@@ -164,6 +167,18 @@ public class JavaFXController implements Initializable {
         window.show();
     }
 
+    public void handleBtnAddCodesEnter(ActionEvent actionEvent){
+        txtcode.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if(keyEvent.getCode() == KeyCode.ENTER)
+                {
+                    handleBtnAddCodes(actionEvent);
+                }
+            }
+        });
+    }
+
     public void handleBtnAddCodes(ActionEvent actionEvent){
         String code = txtcode.getText();
         txtcode.clear();
@@ -174,7 +189,6 @@ public class JavaFXController implements Initializable {
             Alert a = new Alert(Alert.AlertType.ERROR, "NOT A VALID COURSE CODE! PLEASE TRY AGAIN.");
             a.show();
         }
-
     }
 
     public void handleBtnSubmitCodes(ActionEvent actionEvent) throws IOException {
