@@ -95,8 +95,9 @@ public class JavaFXController implements Initializable {
         Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
         if(filePath.getText().contains(".pdf")){
             Program.setPathName(filePath.getText());
-            System.out.println(Program.getPathName());
+            //System.out.println(Program.getPathName());
             Program.setCourseList(Program.buildCourses(Program.getPathName()));
+            System.out.println(Program.getCourseList());
             Stage window = (Stage) this.submitToHome.getScene().getWindow();
             window.setScene(new Scene(root));
             window.show();
@@ -115,7 +116,7 @@ public class JavaFXController implements Initializable {
         if (selectedFile != null) {
             filePath.setText((selectedFile.getAbsolutePath()));
         }else {
-            System.out.println("File is not valid!");
+            //System.out.println("File is not valid!");
 
         }
 
@@ -234,8 +235,6 @@ public class JavaFXController implements Initializable {
             window.show();
         }
     }
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

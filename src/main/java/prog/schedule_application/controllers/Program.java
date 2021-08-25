@@ -30,7 +30,7 @@ public class Program {
     public static ArrayList<Course> buildCourses(String path) {
         ArrayList<Course> courses = new ArrayList<>();
         int counter = 0;
-        String regex = "^([A-Z]{3}[0-9]{3})[ ]([A-Z0-9]{0,2}[ ])?([A-z\\s\\:\\-]{1,})[ ]([0-9]{1})[ ]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[-]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[ ]([MTWHF]{1,5})[ ]([0-9]{3})";
+        String regex = "^([A-Z]{3}[0-9]{3})[ ]([A-Z0-9]{0,2}[ ])?([A-z0-9\\s\\:\\-]{1,})[ ]([0-9]{1})[ ]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[-]([0-9]{1,2})[:]([0-9]{1,2})[ ](AM|PM)[ ]([MTWHF]{1,5})[ ]([0-9]{3})";
         String sprintRegex = "^(Sprint 2)";
         PDFtoTXT.test(path);
         for (String a : PDFtoTXT.pdfStrings) {
@@ -50,7 +50,6 @@ public class Program {
                 String sectionCode = m.group(2) != null ? m.group(2) : "N/A";
                 String courseCode = m.group(1);
                 String roomNumber = m.group(12);
-                Boolean isRequired = true;
                 counter += 1;
                 Course course = new Course(startTime, endTime, eventName, days, sectionCode, courseCode, roomNumber);
                 if(isInList(course, courses)==false){
@@ -99,7 +98,7 @@ public class Program {
 
         switch (sprintTime) {
             case 1:
-                System.out.println("\nSprint " + sprintTime + " Course List: \n");
+                //System.out.println("\nSprint " + sprintTime + " Course List: \n");
                 for (String courseCode : userClasses) {
                     //Check the course list for all the courses to be taken and add them to staging ground
                     for (Course course : courseList) {
@@ -110,7 +109,7 @@ public class Program {
                 }
                 printCourseList(sprintCourses);
             case 2:
-                System.out.println("\nSprint 2 Course List:");
+                //System.out.println("\nSprint 2 Course List:");
                 for (String courseCode : userClasses) {
                     //Check the course list for all the courses to be taken and add them to the list of sprint courses
                     for (Course course : courseList) {
@@ -121,7 +120,7 @@ public class Program {
                 }
                 printCourseList(sprintCourses);
             case 3:
-                System.out.println("\nQuarter Course List:");
+                //System.out.println("\nQuarter Course List:");
                 for (String courseCode : userClasses) {
                     //Check the course list for all the courses to be taken and add them to the list of sprint courses
                     for (Course course : courseList) {
