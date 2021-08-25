@@ -76,18 +76,22 @@ public class Program {
     }
 
     public static boolean addToInputCourses(String courseToAdd){
+        boolean valid = false;
         String formattedInput = courseToAdd.toUpperCase();
         formattedInput = formattedInput.replaceAll(" ", "");
         String regex = "([A-Z]{3}[0-9]{3})";
         p = Pattern.compile(regex);
         m = p.matcher(formattedInput);
-        if(m.find()){
-            getInputCourses().add(formattedInput);
-            return true;
+        for (Course a : courseList){
+            valid = a.getCourseCode().equals(formattedInput);
+            if (valid){
+                if(m.find()){
+                    getInputCourses().add(formattedInput);
+                    return true;
+                }
+            }
         }
-        else{
-            return false;
-        }
+        return false;
     }
 
     public static ArrayList<Course> courseListCreator(int sprintTime, ArrayList<String> userClasses, ArrayList<Course> courseList) {
