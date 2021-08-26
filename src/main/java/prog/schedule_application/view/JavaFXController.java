@@ -144,6 +144,7 @@ public class JavaFXController implements Initializable {
     }
 
     public void handleBtnFileUpload(ActionEvent actionEvent) throws IOException {
+        Program.getCourseList().clear();
         Parent root = FXMLLoader.load(Main.class.getResource("fileExplorer.fxml"));
         Stage window = (Stage) this.upload.getScene().getWindow();
         window.setScene(new Scene(root));
