@@ -135,10 +135,9 @@ public class JavaFXController implements Initializable {
             window.setScene(new Scene(root));
             window.show();
         } else {
-            Alert a = new Alert(Alert.AlertType.ERROR, "PDF IS INVALID DOESN'T CONTAIN COURSES!");
+            Alert a = Alerter.createAlert(Alert.AlertType.ERROR, "PDF IS INVALID DOESN'T CONTAIN COURSES!");
             a.show();
         }
-
     }
 
     public void handleBtnFileUpload(ActionEvent actionEvent) throws IOException {
@@ -203,7 +202,7 @@ public class JavaFXController implements Initializable {
         if (valid){
             txtcoursearea.setText(Program.getInputCourses().toString());
         } else {
-            Alert a = new Alert(Alert.AlertType.ERROR, "NOT A VALID COURSE CODE! PLEASE TRY AGAIN.");
+            Alert a = Alerter.createAlert(Alert.AlertType.ERROR, "NOT A VALID COURSE CODE! PLEASE TRY AGAIN.");
             a.show();
         }
     }
@@ -217,9 +216,11 @@ public class JavaFXController implements Initializable {
             Stage window = (Stage) this.home.getScene().getWindow();
             window.setScene(new Scene(root, 800, 600));
             window.show();
-            a = new Alert(Alert.AlertType.INFORMATION, "Select the box called Classes to begin. The Drop down menu will contain the classes with different times and sections. Once you have selected you class click add class and once done press submit to finish.");
+//            a = new Alert(Alert.AlertType.INFORMATION, "Select the box called Classes to begin. The Drop down menu will contain the classes with different times and sections. Once you have selected you class click add class and once done press submit to finish.");
+//            a.show();
+//            a.setResizable(true);
+            a = Alerter.createAlert(Alert.AlertType.INFORMATION, "Select the box called Classes to begin. The Drop down menu will contain the classes with different times and sections. Once you have selected you class click add class and once done press submit to finish.");
             a.show();
-            a.setResizable(true);
 //            Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes",
         }
     }
