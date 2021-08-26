@@ -34,6 +34,7 @@ public class Alerter {
 
         Label t = new Label(sb.toString());
         alert.getDialogPane().setContent(t);
+//        alert.getDialogPane().setPrefSize(500, 150);
         return alert;
     }
 }

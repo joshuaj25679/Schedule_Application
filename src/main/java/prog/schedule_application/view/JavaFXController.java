@@ -179,6 +179,7 @@ public class JavaFXController implements Initializable {
         });
     }
 
+    //NULL POINTER EXCEPTION
     public void handleBtnFileEnter(ActionEvent actionEvent){
         filePath.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
