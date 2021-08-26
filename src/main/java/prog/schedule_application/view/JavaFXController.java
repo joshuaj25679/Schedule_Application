@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 import javafx.stage.Window;
 import javafx.stage.WindowEvent;
 import org.apache.pdfbox.pdmodel.interactive.annotation.handlers.PDAbstractAppearanceHandler;
+import org.controlsfx.control.textfield.TextFields;
 import prog.schedule_application.Main;
 import prog.schedule_application.controllers.PDFtoTXT;
 import prog.schedule_application.controllers.Program;
@@ -51,7 +52,7 @@ public class JavaFXController implements Initializable {
     @FXML
     Button submitToHome;
     @FXML
-    TextArea filePath;
+    TextField filePath;
     @FXML
     Label lblStatus;
     @FXML
@@ -174,6 +175,22 @@ public class JavaFXController implements Initializable {
                 if(keyEvent.getCode() == KeyCode.ENTER)
                 {
                     handleBtnAddCodes(actionEvent);
+                }
+            }
+        });
+    }
+
+    public void handleBtnFileEnter(ActionEvent actionEvent){
+        filePath.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if(keyEvent.getCode() == KeyCode.ENTER)
+                {
+                    try {
+                        handleBtnSubmitCodes(actionEvent);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         });
