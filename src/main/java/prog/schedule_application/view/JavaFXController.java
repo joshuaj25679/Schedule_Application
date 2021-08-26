@@ -129,6 +129,7 @@ public class JavaFXController implements Initializable {
     //Home Screen
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
         Program.getInputCourses().clear();
+        Program.getUserCourseList().clear();
         btnDisplaySchedule.setVisible(true);
         if (!Program.getCourseList().isEmpty()){
             Parent root = FXMLLoader.load(Main.class.getResource("courseCodes.fxml"));
