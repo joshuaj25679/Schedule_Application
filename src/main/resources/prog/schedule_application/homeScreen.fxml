@@ -9,15 +9,15 @@
 
 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #434142;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="prog.schedule_application.view.JavaFXController">
    <children>
-      <ToolBar layoutX="700.0" layoutY="15.0" prefHeight="40.0" prefWidth="85.0" style="-fx-border-color: #fad000; -fx-background-color: #434142;" AnchorPane.rightAnchor="14.799999999999955" AnchorPane.topAnchor="15.0">
+      <ToolBar layoutX="700.0" layoutY="15.0" prefHeight="40.0" prefWidth="85.0" style="-fx-border-color: #fad000; -fx-background-color: #222222;" AnchorPane.rightAnchor="14.799999999999955" AnchorPane.topAnchor="15.0">
          <items>
-            <Button fx:id="log" mnemonicParsing="false" onAction="#handleCloseButtonAction" style="-fx-background-color: #434142;" text="LOG OUT" textFill="#fad000" />
+            <Button fx:id="log" mnemonicParsing="false" onAction="#handleCloseButtonAction" style="-fx-background-color: #222222;" text="LOG OUT" textFill="#fad000" />
          </items>
       </ToolBar>
       <ToolBar layoutX="305.0" layoutY="22.0" prefHeight="40.0" prefWidth="189.0" style="-fx-background-color: #434142;">
          <items>
-            <Button fx:id="upload" mnemonicParsing="false" onAction="#handleBtnUpload" prefHeight="27.0" prefWidth="94.0" style="-fx-background-color: #434142; -fx-border-color: #fad000;" text="ADD CLASSES" textFill="#fad000" />
-            <Button fx:id="btnFile" mnemonicParsing="false" onAction="#handleBtnFileUpload" style="-fx-background-color: #434142; -fx-border-color: #fad000;" text="File Upload" textFill="#fad000" />
+            <Button fx:id="upload" mnemonicParsing="false" onAction="#handleBtnUpload" prefHeight="27.0" prefWidth="94.0" style="-fx-background-color: #222222; -fx-border-color: #fad000;" text="ADD CLASSES" textFill="#fad000" />
+            <Button fx:id="btnFile" mnemonicParsing="false" onAction="#handleBtnFileUpload" style="-fx-background-color: #222222; -fx-border-color: #fad000;" text="File Upload" textFill="#fad000" />
          </items>
       </ToolBar>
       <TextArea fx:id="txtSprintOne" editable="false" layoutX="60.0" layoutY="150.0" prefHeight="319.0" prefWidth="272.0" />
@@ -32,6 +32,6 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Button fx:id="btnDisplaySchedule" layoutX="351.0" layoutY="274.0" mnemonicParsing="false" onAction="#onClickDisplayUserSchedule" style="-fx-background-color: #434142; -fx-border-color: #fad000;" text="Show Schedule" textFill="#fad000" />
+      <Button fx:id="btnDisplaySchedule" layoutX="351.0" layoutY="274.0" mnemonicParsing="false" onAction="#onClickDisplayUserSchedule" style="-fx-background-color: #222222; -fx-border-color: #fad000;" text="Show Schedule" textFill="#fad000" />
    </children>
 </AnchorPane>
