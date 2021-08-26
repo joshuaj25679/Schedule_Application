@@ -86,8 +86,6 @@ public class JavaFXController implements Initializable {
     @FXML
     TextArea classList;
     @FXML
-    Button btnAddCourse;
-    @FXML
     Button btnClasses;
     @FXML
     ComboBox<Course> comboBox;
@@ -101,7 +99,7 @@ public class JavaFXController implements Initializable {
             Program.setPathName(filePath.getText());
             //System.out.println(Program.getPathName());
             Program.setCourseList(Program.buildCourses(Program.getPathName()));
-            System.out.println(Program.getCourseList());
+            //System.out.println(Program.getCourseList());
             Stage window = (Stage) this.submitToHome.getScene().getWindow();
             window.setScene(new Scene(root));
             window.show();
@@ -227,14 +225,6 @@ public class JavaFXController implements Initializable {
     }
 
     //Schedule Creator Screen
-    public void onClickAddCourses(ActionEvent actionEvent){
-//        System.out.println(Program.getCourseList());
-        if (comboBox.getItems().isEmpty()){
-            ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.getCourseList()));
-            comboBox.getItems().addAll(classes);
-        }
-    }
-
     public void onShowTest(){
         if (comboBox.getItems().isEmpty()) {
             ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.getCourseList()));
