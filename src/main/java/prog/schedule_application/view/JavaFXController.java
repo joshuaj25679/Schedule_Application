@@ -220,6 +220,8 @@ public class JavaFXController implements Initializable {
 //            a.show();
 //            a.setResizable(true);
             a = Alerter.createAlert(Alert.AlertType.INFORMATION, "Select the box called Classes to begin. The Drop down menu will contain the classes with different times and sections. Once you have selected you class click add class and once done press submit to finish.");
+            a.setTitle("Instructions");
+            a.setHeaderText("Instructions");
             a.show();
 //            Alerter.showAlert(Alert.AlertType.INFORMATION, owner, "Add Classes",
         }
