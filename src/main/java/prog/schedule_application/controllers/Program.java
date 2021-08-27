@@ -38,11 +38,11 @@ public class Program {
             m = p.matcher(a);
             if (m.find()) {
                 LocalTime startTime = LocalTime.of(Integer.parseInt(m.group(5)), Integer.parseInt(m.group(6)));
-                if (m.group(7).equals("PM")) {
+                if (m.group(7).equals("PM") && !(m.group(5).equals("12") && m.group(6).equals("00"))) {
                     startTime = LocalTime.of(Integer.parseInt(m.group(5)) + 12, Integer.parseInt(m.group(6)));
                 }
                 LocalTime endTime = LocalTime.of(Integer.parseInt(m.group(8)), Integer.parseInt(m.group(9)));
-                if (m.group(10).equals("PM")) {
+                if (m.group(10).equals("PM") && !(m.group(8).equals("12") && m.group(9).equals("50"))) {
                     endTime = LocalTime.of(Integer.parseInt(m.group(8)) + 12, Integer.parseInt(m.group(9)));
                 }
                 String eventName = m.group(3);
