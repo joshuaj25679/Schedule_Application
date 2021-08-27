@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.TilePane;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.stage.Window;
@@ -231,9 +232,11 @@ public class JavaFXController implements Initializable {
 
     //Schedule Creator Screen
     public void onShowTest(){
+
         if (comboBox.getItems().isEmpty()) {
             ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.getCourseList()));
             comboBox.getItems().addAll(classes);
+            comboBox.show();
         }
 //        comboBox
     }
