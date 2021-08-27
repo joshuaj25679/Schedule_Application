@@ -94,15 +94,16 @@ public class JavaFXController implements Initializable {
 
     //File Explorer Screen
     public void handleBtnSubmitHome(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
+//        Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
         if(filePath.getText().contains(".pdf")){
             Program.setPathName(filePath.getText());
             //System.out.println(Program.getPathName());
             Program.setCourseList(Program.buildCourses(Program.getPathName()));
             //System.out.println(Program.getCourseList());
-            Stage window = (Stage) this.submitToHome.getScene().getWindow();
-            window.setScene(new Scene(root));
-            window.show();
+//            Stage window = (Stage) this.submitToHome.getScene().getWindow();
+//            window.setScene(new Scene(root));
+//            window.show();
+            ChangeScene.changeScene(actionEvent, "homeScreen.fxml");
         }else {
 //            lblStatus.setText("Either PDF file is not found or supported. Try again, or choose a different PDF file.");
             txtNotValid.setVisible(true);
@@ -167,10 +168,11 @@ public class JavaFXController implements Initializable {
 
     //User Input Screen
     public void handleBtnHome(ActionEvent actionEvent) throws IOException {
-        Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
-        Stage window = (Stage) this.home.getScene().getWindow();
-        window.setScene(new Scene(root));
-        window.show();
+//        Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
+//        Stage window = (Stage) this.home.getScene().getWindow();
+//        window.setScene(new Scene(root));
+//        window.show();
+        ChangeScene.changeScene(actionEvent, "homeScreen.fxml");
     }
 
     public void handleBtnAddCodesEnter(ActionEvent actionEvent){
@@ -262,10 +264,11 @@ public class JavaFXController implements Initializable {
         Alert a = new Alert(Alert.AlertType.CONFIRMATION, "Continue?", ButtonType.YES, ButtonType.NO, ButtonType.CANCEL);
         a.showAndWait();
         if (a.getResult() == ButtonType.YES){
-            Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
-            Stage window = (Stage) this.submit.getScene().getWindow();
-            window.setScene(new Scene(root));
-            window.show();
+//            Parent root = FXMLLoader.load(Main.class.getResource("homeScreen.fxml"));
+//            Stage window = (Stage) this.submit.getScene().getWindow();
+//            window.setScene(new Scene(root));
+//            window.show();
+            ChangeScene.changeScene(actionEvent, "homeScreen.fxml");
         }
     }
 
