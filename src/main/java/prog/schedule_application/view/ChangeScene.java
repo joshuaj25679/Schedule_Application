@@ -19,7 +19,7 @@ public class ChangeScene {
 
     public static void changeScene(Event event, String strFXMLFileName) throws IOException {
 
-        URL url = new File("src/main/resources/prog.schedule_application/" + strFXMLFileName).toURI().toURL();
+        URL url = new File("src/main/resources/prog/schedule_application/" + strFXMLFileName).toURI().toURL();
         Parent root = FXMLLoader.load(url);
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
