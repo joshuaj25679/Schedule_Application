@@ -158,6 +158,11 @@ public class JavaFXController implements Initializable {
         txtSprintTwo.setText(Program.buildSchedule(2, Program.getUserCourseList()));
         btnDisplaySchedule.setVisible(false);
     }
+    public void onMouseEnterDisplayUserSchedule() {
+        txtSprintOne.setText(Program.buildSchedule(1, Program.getUserCourseList()));
+        txtSprintTwo.setText(Program.buildSchedule(2, Program.getUserCourseList()));
+        btnDisplaySchedule.setVisible(false);
+    }
 
     //User Input Screen
     public void handleBtnHome(ActionEvent actionEvent) throws IOException {
