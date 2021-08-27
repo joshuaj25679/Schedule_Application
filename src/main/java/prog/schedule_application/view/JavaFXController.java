@@ -129,7 +129,6 @@ public class JavaFXController implements Initializable {
     public void handleBtnUpload(ActionEvent actionEvent) throws IOException {
         Program.getInputCourses().clear();
         Program.getUserCourseList().clear();
-        btnDisplaySchedule.setVisible(true);
         if (!Program.getCourseList().isEmpty()){
             Parent root = FXMLLoader.load(Main.class.getResource("courseCodes.fxml"));
             Stage window = (Stage) this.upload.getScene().getWindow();
@@ -155,15 +154,9 @@ public class JavaFXController implements Initializable {
         stage.close();
     }
 
-    public void onClickDisplayUserSchedule(ActionEvent event) {
-        txtSprintOne.setText(Program.buildSchedule(1, Program.getUserCourseList()));
-        txtSprintTwo.setText(Program.buildSchedule(2, Program.getUserCourseList()));
-        btnDisplaySchedule.setVisible(false);
-    }
     public void onMouseEnterDisplayUserSchedule() {
         txtSprintOne.setText(Program.buildSchedule(1, Program.getUserCourseList()));
         txtSprintTwo.setText(Program.buildSchedule(2, Program.getUserCourseList()));
-        btnDisplaySchedule.setVisible(false);
     }
 
     //User Input Screen

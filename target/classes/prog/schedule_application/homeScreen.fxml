@@ -32,6 +32,5 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Button fx:id="btnDisplaySchedule" layoutX="351.0" layoutY="274.0" mnemonicParsing="false" onAction="#onClickDisplayUserSchedule" style="-fx-background-color: #222222; -fx-border-color: #fad000;" text="Show Schedule" textFill="#fad000" />
    </children>
 </AnchorPane>
