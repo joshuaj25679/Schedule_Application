@@ -238,7 +238,11 @@ public class JavaFXController implements Initializable {
         if (comboBox.getItems().isEmpty()) {
             ObservableList<Course> classes = FXCollections.observableArrayList(Program.courseListCreator(3, Program.getInputCourses(), Program.getCourseList()));
             comboBox.getItems().addAll(classes);
-            comboBox.show();
+            if (comboBox.getItems().isEmpty()){
+                System.out.println("Courses not added!");
+            } else {
+                comboBox.show();
+            }
         }
 //        comboBox
     }
