@@ -131,10 +131,11 @@ public class JavaFXController implements Initializable {
         Program.getInputCourses().clear();
         Program.getUserCourseList().clear();
         if (!Program.getCourseList().isEmpty()){
-            Parent root = FXMLLoader.load(Main.class.getResource("courseCodes.fxml"));
-            Stage window = (Stage) this.upload.getScene().getWindow();
-            window.setScene(new Scene(root));
-            window.show();
+//            Parent root = FXMLLoader.load(Main.class.getResource("courseCodes.fxml"));
+//            Stage window = (Stage) this.upload.getScene().getWindow();
+//            window.setScene(new Scene(root));
+//            window.show();
+            ChangeScene.changeScene(actionEvent, "courseCodes.fxml");
         } else {
             Alert a = Alerter.createAlert(Alert.AlertType.ERROR, "PDF IS INVALID DOESN'T CONTAIN COURSES!");
             a.show();
@@ -218,6 +219,7 @@ public class JavaFXController implements Initializable {
             Parent root = FXMLLoader.load(Main.class.getResource("add-Class.fxml"));
             Stage window = (Stage) this.home.getScene().getWindow();
             window.setScene(new Scene(root, 800, 600));
+            window.setResizable(false);
             window.show();
 //            a = new Alert(Alert.AlertType.INFORMATION, "Select the box called Classes to begin. The Drop down menu will contain the classes with different times and sections. Once you have selected you class click add class and once done press submit to finish.");
 //            a.show();
